@@ -1,0 +1,24 @@
+# netlify.toml — BAMS Technology
+# Security headers applied to all pages
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Clickjacking protection
+    X-Frame-Options = "SAMEORIGIN"
+
+    # Prevent MIME-type sniffing
+    X-Content-Type-Options = "nosniff"
+
+    # Content Security Policy
+    # Allows self-hosted assets + Google Fonts + inline styles (needed for the site)
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; frame-src 'none'"
+
+    # Force HTTPS for 1 year (enable after SSL is confirmed working)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+    # Control referrer information
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Disable browser features not needed by the site
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"

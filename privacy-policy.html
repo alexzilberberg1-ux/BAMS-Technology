@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — BAMS Technology</title>
+<meta name="description" content="Privacy Policy for BAMS Technology — Managed IT & Cybersecurity services.">
+<link rel="canonical" href="https://bamstechnology.com/privacy-policy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9952A;
+  --gold-bright: #E8B84B;
+  --gold-glow: rgba(201,149,42,0.13);
+  --gold-border: rgba(201,149,42,0.28);
+  --bg: #09090b;
+  --surface: #111113;
+  --surface2: #18181b;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.1);
+  --muted: #52525b;
+  --subtle: #a1a1aa;
+  --text: #ffffff;
+  --white: #ffffff;
+  --mono: 'DM Mono', monospace;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 68px;
+  background: rgba(9,9,11,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex; align-items: center; text-decoration: none;
+  font-family: var(--mono); font-size: 1rem; font-weight: 500;
+  color: var(--gold-bright); letter-spacing: 0.04em;
+}
+.nav-back {
+  display: flex; align-items: center; gap: 8px;
+  text-decoration: none; color: var(--subtle); font-size: 0.9rem;
+  font-weight: 500; transition: color 0.2s;
+}
+.nav-back:hover { color: var(--gold); }
+.nav-back svg { width: 16px; height: 16px; }
+
+/* HERO */
+.page-hero {
+  padding: 120px 40px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-glow {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 300px; border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(201,149,42,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-label {
+  font-family: var(--mono); font-size: 0.75rem; color: var(--gold);
+  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;
+}
+.page-title {
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+  letter-spacing: -0.04em; color: var(--white); line-height: 1.1;
+  margin-bottom: 16px;
+}
+.page-meta {
+  font-size: 0.875rem; color: var(--muted); font-family: var(--mono);
+}
+
+/* CONTENT */
+.content-wrap {
+  max-width: 760px; margin: 0 auto; padding: 64px 40px 100px;
+}
+
+.section-block {
+  margin-bottom: 48px;
+}
+
+.section-block h2 {
+  font-size: 1.25rem; font-weight: 700; color: var(--gold-bright);
+  letter-spacing: -0.02em; margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+
+.section-block h3 {
+  font-size: 1rem; font-weight: 600; color: var(--white);
+  margin-bottom: 10px; margin-top: 24px;
+}
+
+.section-block p {
+  font-size: 1rem; color: var(--subtle); line-height: 1.75;
+  margin-bottom: 14px; font-weight: 400;
+}
+
+.section-block ul {
+  list-style: none; padding: 0; margin-bottom: 14px;
+}
+
+.section-block ul li {
+  font-size: 1rem; color: var(--subtle); line-height: 1.75;
+  padding: 6px 0 6px 20px; position: relative;
+}
+
+.section-block ul li::before {
+  content: '→'; position: absolute; left: 0;
+  color: var(--gold); font-family: var(--mono); font-size: 0.75rem;
+  top: 8px;
+}
+
+.section-block a {
+  color: var(--gold-bright); text-decoration: none;
+  border-bottom: 1px solid var(--gold-border);
+  transition: border-color 0.2s;
+}
+.section-block a:hover { border-color: var(--gold); }
+
+.highlight-box {
+  background: var(--surface); border: 1px solid var(--gold-border);
+  border-radius: 12px; padding: 24px 28px; margin-bottom: 48px;
+}
+.highlight-box p {
+  font-size: 0.9375rem; color: var(--subtle); line-height: 1.7;
+  margin: 0;
+}
+.highlight-box strong { color: var(--white); font-weight: 600; }
+
+/* FOOTER */
+footer {
+  padding: 36px 48px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  background: var(--surface);
+}
+.footer-copy { font-size: 0.8125rem; color: var(--muted); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 0.8125rem; color: var(--muted); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--subtle); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .page-hero { padding: 100px 20px 48px; }
+  .content-wrap { padding: 48px 20px 80px; }
+  footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">BAMS Technology</a>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M10 12L6 8l4-4"/>
+    </svg>
+    Back to Home
+  </a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="page-label">Legal</div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">Effective Date: January 1, 2025 &nbsp;·&nbsp; Last Updated: January 1, 2025</p>
+</div>
+
+<div class="content-wrap">
+
+  <div class="highlight-box">
+    <p><strong>Your privacy matters to us.</strong> BAMS Technology LLC ("BAMS Technology," "we," "us," or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit <a href="https://bamstechnology.com">bamstechnology.com</a> or use our services.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>1. Information We Collect</h2>
+    <h3>Information You Provide Directly</h3>
+    <p>When you contact us, request a quote, or engage our services, we may collect:</p>
+    <ul>
+      <li>Name, email address, phone number, and job title</li>
+      <li>Company name, address, and industry</li>
+      <li>Details about your IT environment and service requirements</li>
+      <li>Payment and billing information (processed securely by our payment partners)</li>
+      <li>Communications you send to us via email, phone, or our website</li>
+    </ul>
+    <h3>Information Collected Automatically</h3>
+    <p>When you visit our website, we may automatically collect:</p>
+    <ul>
+      <li>IP address, browser type, and operating system</li>
+      <li>Pages visited, time spent on pages, and referring URLs</li>
+      <li>Device identifiers and general geographic location</li>
+      <li>Cookies and similar tracking technologies (see Section 5)</li>
+    </ul>
+    <h3>Information From Third Parties</h3>
+    <p>We may receive information about you from business partners, referral sources, and publicly available databases to supplement our records and improve service delivery.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>2. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, operate, and improve our managed IT and cybersecurity services</li>
+      <li>Respond to your inquiries and fulfill service requests</li>
+      <li>Process transactions and send related information (invoices, receipts)</li>
+      <li>Send service updates, security alerts, and administrative messages</li>
+      <li>Send marketing communications about our services (you may opt out at any time)</li>
+      <li>Monitor and analyze usage patterns to improve our website and services</li>
+      <li>Detect, prevent, and respond to fraud, security incidents, or technical issues</li>
+      <li>Comply with applicable laws, regulations, and legal obligations</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>3. How We Share Your Information</h2>
+    <p>We do not sell your personal information. We may share it in the following circumstances:</p>
+    <h3>Service Providers</h3>
+    <p>We work with third-party vendors who assist in delivering our services — including cloud infrastructure providers, payment processors, email platforms, and analytics tools. These vendors are contractually required to protect your information and may only use it to provide services to us.</p>
+    <h3>Business Transfers</h3>
+    <p>In the event of a merger, acquisition, or sale of all or part of our assets, your information may be transferred as part of that transaction. We will notify you before your information becomes subject to a different privacy policy.</p>
+    <h3>Legal Requirements</h3>
+    <p>We may disclose your information when required by law, court order, or government authority, or when we believe disclosure is necessary to protect the rights, property, or safety of BAMS Technology, our clients, or others.</p>
+    <h3>With Your Consent</h3>
+    <p>We may share your information for other purposes with your explicit consent.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>4. Data Retention</h2>
+    <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this policy, maintain our service relationship with you, comply with legal obligations, resolve disputes, and enforce our agreements. When we no longer need your information, we securely delete or anonymize it.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>5. Cookies and Tracking</h2>
+    <p>Our website uses cookies and similar technologies to enhance your experience and gather analytics. You can control cookie preferences through your browser settings. Please note that disabling certain cookies may affect website functionality.</p>
+    <p>We use cookies for:</p>
+    <ul>
+      <li>Essential website functionality and security</li>
+      <li>Analytics and performance measurement (e.g., page load times, visit counts)</li>
+      <li>Remembering your preferences across sessions</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>6. Data Security</h2>
+    <p>As a cybersecurity company, we apply rigorous security controls to protect your information. These include encryption in transit and at rest, access controls and least-privilege principles, regular security assessments and vulnerability testing, and employee security training. However, no system is completely immune from risk. We encourage you to use strong, unique passwords and contact us immediately if you suspect any unauthorized access.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>7. Your Rights and Choices</h2>
+    <p>Depending on your location, you may have the right to:</p>
+    <ul>
+      <li>Access the personal information we hold about you</li>
+      <li>Correct inaccurate or incomplete information</li>
+      <li>Request deletion of your personal information</li>
+      <li>Opt out of marketing communications at any time</li>
+      <li>Object to or restrict certain types of processing</li>
+      <li>Data portability (receive a copy of your data in a machine-readable format)</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at <a href="mailto:alex.zilberberg@bamstechnology.com">alex.zilberberg@bamstechnology.com</a>. We will respond within 30 days.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>8. Children's Privacy</h2>
+    <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a minor, please contact us and we will promptly delete it.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>9. Third-Party Links</h2>
+    <p>Our website may contain links to third-party websites. This Privacy Policy does not apply to those sites, and we are not responsible for their privacy practices. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of our website or services after changes constitutes your acceptance of the revised policy.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>11. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out:</p>
+    <ul>
+      <li><strong style="color:var(--white)">Company:</strong> BAMS Technology LLC</li>
+      <li><strong style="color:var(--white)">Email:</strong> <a href="mailto:alex.zilberberg@bamstechnology.com">alex.zilberberg@bamstechnology.com</a></li>
+      <li><strong style="color:var(--white)">Phone:</strong> <a href="tel:+16463319331">(646) 331-9331</a></li>
+      <li><strong style="color:var(--white)">Website:</strong> <a href="https://bamstechnology.com">bamstechnology.com</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 BAMS Technology. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="/#contact">Contact</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-of-service">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
