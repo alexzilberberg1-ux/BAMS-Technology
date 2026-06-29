@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <!-- circuit node dots -->
+    <circle id="dot" r="4" fill="#c9a227" opacity="0.4"/>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- decorative circuit lines -->
+  <g stroke="#c9a227" stroke-width="1" opacity="0.12" fill="none">
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="900" y1="120" x2="1200" y2="120"/>
+    <line x1="900" y1="320" x2="1100" y2="320"/>
+    <line x1="1100" y1="320" x2="1100" y2="630"/>
+    <line x1="950" y1="220" x2="1200" y2="220"/>
+    <line x1="950" y1="220" x2="950" y2="120"/>
+    <line x1="1050" y1="420" x2="1200" y2="420"/>
+    <line x1="1050" y1="420" x2="1050" y2="320"/>
+    <line x1="0" y1="520" x2="200" y2="520"/>
+    <line x1="200" y1="520" x2="200" y2="630"/>
+  </g>
+
+  <!-- circuit dots -->
+  <use href="#dot" x="900" y="120"/>
+  <use href="#dot" x="950" y="120"/>
+  <use href="#dot" x="950" y="220"/>
+  <use href="#dot" x="1100" y="320"/>
+  <use href="#dot" x="1050" y="320"/>
+  <use href="#dot" x="1050" y="420"/>
+  <use href="#dot" x="200" y="520"/>
+
+  <!-- gold left accent bar -->
+  <rect x="80" y="160" width="4" height="200" fill="#c9a227" rx="2"/>
+
+  <!-- logo hexagon (simplified vector recreation) -->
+  <g transform="translate(108, 108)">
+    <polygon points="40,0 80,20 80,60 40,80 0,60 0,20" fill="none" stroke="#c9a227" stroke-width="2.5" opacity="0.9"/>
+    <polygon points="40,12 68,26 68,54 40,68 12,54 12,26" fill="none" stroke="#c9a227" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="40" cy="40" r="8" fill="none" stroke="#c9a227" stroke-width="2" opacity="0.8"/>
+    <circle cx="40" cy="40" r="3" fill="#c9a227" opacity="0.9"/>
+    <!-- circuit paths inside hex -->
+    <line x1="40" y1="12" x2="40" y2="32" stroke="#c9a227" stroke-width="1.5" opacity="0.6"/>
+    <line x1="40" y1="48" x2="40" y2="68" stroke="#c9a227" stroke-width="1.5" opacity="0.6"/>
+    <line x1="12" y1="40" x2="32" y2="40" stroke="#c9a227" stroke-width="1.5" opacity="0.6"/>
+    <line x1="48" y1="40" x2="68" y2="40" stroke="#c9a227" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="108" y="226" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" letter-spacing="8" fill="#c9a227">BAMS</text>
+  <text x="108" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="400" letter-spacing="6" fill="#c9a227" opacity="0.7">TECHNOLOGY</text>
+
+  <!-- divider -->
+  <line x1="108" y1="290" x2="760" y2="290" stroke="#c9a227" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- headline -->
+  <text x="108" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" fill="#f2f2f2" letter-spacing="-1">Your IT team,</text>
+  <text x="108" y="435" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" fill="#c9a227" font-style="italic" letter-spacing="-1">without the overhead.</text>
+
+  <!-- subline -->
+  <text x="108" y="490" font-family="Arial, sans-serif" font-size="20" fill="#f2f2f2" opacity="0.55">Managed IT · Cybersecurity · Security Cameras · Custom Software</text>
+
+  <!-- stat pills -->
+  <g transform="translate(108, 530)">
+    <rect width="130" height="40" rx="6" fill="#c9a227" opacity="0.12"/>
+    <rect x="0" y="0" width="130" height="40" rx="6" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.4"/>
+    <text x="65" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#c9a227" text-anchor="middle">30-min SLA</text>
+  </g>
+  <g transform="translate(254, 530)">
+    <rect width="130" height="40" rx="6" fill="#c9a227" opacity="0.12"/>
+    <rect x="0" y="0" width="130" height="40" rx="6" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.4"/>
+    <text x="65" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#c9a227" text-anchor="middle">99.9% Uptime</text>
+  </g>
+  <g transform="translate(400, 530)">
+    <rect width="130" height="40" rx="6" fill="#c9a227" opacity="0.12"/>
+    <rect x="0" y="0" width="130" height="40" rx="6" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.4"/>
+    <text x="65" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#c9a227" text-anchor="middle">24/7 Monitoring</text>
+  </g>
+
+  <!-- domain badge bottom right -->
+  <text x="1120" y="600" font-family="Arial, sans-serif" font-size="16" fill="#f2f2f2" opacity="0.35" text-anchor="end">bamstechnology.com</text>
+</svg>
