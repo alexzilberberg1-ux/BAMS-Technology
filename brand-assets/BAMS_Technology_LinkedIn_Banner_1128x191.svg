@@ -1,0 +1,74 @@
+<svg width="1128" height="191" viewBox="0 0 1128 191" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#11161f"/>
+    </linearGradient>
+    <linearGradient id="goldline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a24b" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#d4af5a" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#c9a24b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1128" height="191" fill="url(#bg)"/>
+
+  <!-- subtle circuit / network texture, right side -->
+  <g stroke="#d4af5a" stroke-width="1" opacity="0.16" fill="none">
+    <path d="M700 20 L760 20 L760 55 L820 55"/>
+    <path d="M735 0 L735 35 L810 35 L810 80"/>
+    <path d="M860 15 L860 45 L920 45"/>
+    <path d="M905 0 L905 25 L970 25 L970 65"/>
+    <path d="M770 95 L815 95 L815 125 L870 125"/>
+    <path d="M845 85 L845 110 L915 110 L915 145"/>
+    <path d="M965 75 L1010 75 L1010 115"/>
+    <path d="M955 135 L1000 135 L1000 165 L1060 165"/>
+    <path d="M715 120 L715 155 L775 155"/>
+    <path d="M1030 30 L1030 70 L1080 70"/>
+  </g>
+  <g fill="#d4af5a" opacity="0.45">
+    <circle cx="760" cy="20" r="2.2"/>
+    <circle cx="820" cy="55" r="2.2"/>
+    <circle cx="735" cy="0" r="2.2"/>
+    <circle cx="810" cy="35" r="2.2"/>
+    <circle cx="810" cy="80" r="2.2"/>
+    <circle cx="860" cy="45" r="2.2"/>
+    <circle cx="920" cy="45" r="2.2"/>
+    <circle cx="905" cy="25" r="2.2"/>
+    <circle cx="970" cy="25" r="2.2"/>
+    <circle cx="970" cy="65" r="2.2"/>
+    <circle cx="815" cy="125" r="2.2"/>
+    <circle cx="870" cy="125" r="2.2"/>
+    <circle cx="845" cy="110" r="2.2"/>
+    <circle cx="915" cy="110" r="2.2"/>
+    <circle cx="915" cy="145" r="2.2"/>
+    <circle cx="1010" cy="75" r="2.2"/>
+    <circle cx="1010" cy="115" r="2.2"/>
+    <circle cx="1000" cy="135" r="2.2"/>
+    <circle cx="1000" cy="165" r="2.2"/>
+    <circle cx="1060" cy="165" r="2.2"/>
+    <circle cx="775" cy="155" r="2.2"/>
+    <circle cx="1030" cy="30" r="2.2"/>
+    <circle cx="1080" cy="70" r="2.2"/>
+  </g>
+
+  <!-- shield motif, far right, faint -->
+  <g transform="translate(990,55) scale(0.6)" opacity="0.10">
+    <path d="M70 0 L140 25 L140 80 C140 130 105 165 70 180 C35 165 0 130 0 80 L0 25 Z"
+          fill="none" stroke="#d4af5a" stroke-width="3"/>
+    <path d="M40 90 L62 112 L102 60" fill="none" stroke="#d4af5a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- left content block -->
+  <text x="56" y="78" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700"
+        fill="#f4f1ea" letter-spacing="1.5">BAMS TECHNOLOGY</text>
+
+  <rect x="58" y="92" width="280" height="2" fill="url(#goldline)"/>
+
+  <text x="56" y="120" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400"
+        fill="#c9a24b" letter-spacing="0.3">Managed IT &#x2022; Cybersecurity &#x2022; Custom Software</text>
+
+  <text x="56" y="142" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="400"
+        fill="#9a9a92">Nationwide coverage &#x2014; 24/7 monitoring &#x2014; 30-minute response SLA</text>
+
+</svg>

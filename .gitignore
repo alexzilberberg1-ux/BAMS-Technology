@@ -1,0 +1,12 @@
+# Local tooling / caches (not part of the site)
+.wrangler/
+.claude/
+node_modules/
+
+# Local-only working files: hand-made page backups, archives, scratch
+_local/
+*.zip
+
+# OS cruft
+.DS_Store
+Thumbs.db
