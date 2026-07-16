@@ -48,6 +48,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         e.target.tagName, String(e.target.src || e.target.href || ''));
       return;
     }
+    // Ignore errors from third-party scripts injected by the host (e.g. Cloudflare's
+    // bot-verification snippet), which are unrelated to this page and shouldn't alarm visitors.
+    if (String(e.message || '').indexOf("Cannot read properties of null (reading 'document')") !== -1) {
+      console.warn('[bundle] ignored third-party script error:', e.message);
+      return;
+    }
     var p = document.body || document.documentElement;
     var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
     d.id = '__bundler_err';
