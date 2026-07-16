@@ -12,7 +12,7 @@
 
     # Content Security Policy
     # Allows self-hosted assets + Google Fonts + inline styles (needed for the site)
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; frame-src 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; object-src 'none'; base-uri 'self'; frame-src 'none'"
 
     # Force HTTPS for 1 year (enable after SSL is confirmed working)
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
