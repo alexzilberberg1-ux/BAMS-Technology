@@ -7,41 +7,37 @@
 <meta name="description" content="Terms of Service for BAMS Technology — Managed IT & Cybersecurity services.">
 <link rel="canonical" href="https://bamstechnology.com/terms-of-service">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --gold: #C9952A;
-  --gold-bright: #E8B84B;
-  --gold-glow: rgba(201,149,42,0.13);
-  --gold-border: rgba(201,149,42,0.28);
-  --bg: #09090b;
-  --surface: #111113;
-  --surface2: #18181b;
-  --border: rgba(255,255,255,0.06);
-  --border2: rgba(255,255,255,0.1);
-  --muted: #52525b;
-  --subtle: #a1a1aa;
-  --text: #ffffff;
-  --white: #ffffff;
-  --mono: 'DM Mono', monospace;
-  --sans: 'DM Sans', system-ui, sans-serif;
+  --gold: #C9982E;
+  --gold-ink: #8A6800;
+  --gold-soft: rgba(201,152,46,0.08);
+  --gold-border: rgba(201,152,46,0.30);
+  --obsidian: #0A0B0D;
+  --white: #FFFFFF;
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --steel-mist: #8B92A0;
+  --heading: 'Space Grotesk', system-ui, sans-serif;
+  --body: 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--gray-600);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-}
-
-body::after {
-  content: '';
-  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
-  opacity: 0.018;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  text-rendering: optimizeLegibility;
 }
 
 /* NAV */
@@ -49,135 +45,145 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 500;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 48px; height: 68px;
-  background: rgba(9,9,11,0.9);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gray-200);
 }
 .nav-logo {
-  display: flex; align-items: center; text-decoration: none;
-  font-family: var(--mono); font-size: 1rem; font-weight: 500;
-  color: var(--gold-bright); letter-spacing: 0.04em;
+  display: flex; align-items: center; gap: 9px; text-decoration: none;
+  font-family: var(--heading); font-size: 1.05rem; font-weight: 700;
+  color: var(--obsidian); letter-spacing: -0.02em;
+}
+.nav-logo .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft);
 }
 .nav-back {
   display: flex; align-items: center; gap: 8px;
-  text-decoration: none; color: var(--subtle); font-size: 0.9rem;
+  text-decoration: none; color: var(--gray-500); font-size: 0.9rem;
   font-weight: 500; transition: color 0.2s;
 }
-.nav-back:hover { color: var(--gold); }
+.nav-back:hover { color: var(--gold-ink); }
 .nav-back svg { width: 16px; height: 16px; }
 
 /* HERO */
 .page-hero {
-  padding: 120px 40px 64px;
+  padding: 132px 40px 56px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
 }
 .page-hero-glow {
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 700px; height: 300px; border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(201,149,42,0.07) 0%, transparent 70%);
+  position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 720px; height: 320px; border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(201,152,46,0.10) 0%, transparent 70%);
   pointer-events: none;
 }
 .page-label {
-  font-family: var(--mono); font-size: 0.75rem; color: var(--gold);
-  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;
+  position: relative;
+  font-family: var(--mono); font-size: 0.75rem; color: var(--gold-ink);
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px;
 }
 .page-title {
+  position: relative;
+  font-family: var(--heading);
   font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
-  letter-spacing: -0.04em; color: var(--white); line-height: 1.1;
+  letter-spacing: -0.03em; color: var(--obsidian); line-height: 1.08;
   margin-bottom: 16px;
 }
 .page-meta {
-  font-size: 0.875rem; color: var(--muted); font-family: var(--mono);
+  position: relative;
+  font-size: 0.8125rem; color: var(--gray-400); font-family: var(--mono);
 }
 
 /* CONTENT */
 .content-wrap {
-  max-width: 760px; margin: 0 auto; padding: 64px 40px 100px;
+  max-width: 760px; margin: 0 auto; padding: 64px 40px 96px;
 }
 
-.section-block {
-  margin-bottom: 48px;
-}
+.section-block { margin-bottom: 44px; }
 
 .section-block h2 {
-  font-size: 1.25rem; font-weight: 700; color: var(--gold-bright);
-  letter-spacing: -0.02em; margin-bottom: 16px;
-  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  font-family: var(--heading);
+  font-size: 1.3125rem; font-weight: 700; color: var(--obsidian);
+  letter-spacing: -0.02em; margin-bottom: 18px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--gray-200);
+}
+.section-block h2::before {
+  content: ''; display: inline-block; vertical-align: middle;
+  width: 18px; height: 2px; background: var(--gold);
+  margin-right: 12px; border-radius: 2px;
 }
 
 .section-block h3 {
-  font-size: 1rem; font-weight: 600; color: var(--white);
-  margin-bottom: 10px; margin-top: 24px;
+  font-family: var(--heading);
+  font-size: 1rem; font-weight: 600; color: var(--obsidian);
+  margin-bottom: 10px; margin-top: 26px;
 }
 
 .section-block p {
-  font-size: 1rem; color: var(--subtle); line-height: 1.75;
+  font-size: 1rem; color: var(--gray-600); line-height: 1.75;
   margin-bottom: 14px; font-weight: 400;
 }
 
-.section-block ul {
-  list-style: none; padding: 0; margin-bottom: 14px;
-}
+.section-block ul { list-style: none; padding: 0; margin-bottom: 14px; }
 
 .section-block ul li {
-  font-size: 1rem; color: var(--subtle); line-height: 1.75;
-  padding: 6px 0 6px 20px; position: relative;
+  font-size: 1rem; color: var(--gray-600); line-height: 1.7;
+  padding: 6px 0 6px 24px; position: relative;
 }
-
 .section-block ul li::before {
-  content: '→'; position: absolute; left: 0;
-  color: var(--gold); font-family: var(--mono); font-size: 0.75rem;
-  top: 8px;
+  content: '\2192'; position: absolute; left: 0; top: 7px;
+  color: var(--gold); font-family: var(--mono); font-size: 0.8125rem;
 }
 
 .section-block a {
-  color: var(--gold-bright); text-decoration: none;
+  color: var(--gold-ink); text-decoration: none;
   border-bottom: 1px solid var(--gold-border);
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, color 0.2s;
 }
-.section-block a:hover { border-color: var(--gold); }
+.section-block a:hover { border-color: var(--gold); color: var(--gold); }
+
+.label-strong { color: var(--obsidian); font-weight: 600; }
 
 .highlight-box {
-  background: var(--surface); border: 1px solid var(--gold-border);
-  border-radius: 12px; padding: 24px 28px; margin-bottom: 48px;
+  background: var(--gray-50); border: 1px solid var(--gray-200);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px; padding: 24px 28px; margin-bottom: 44px;
 }
-.highlight-box p {
-  font-size: 0.9375rem; color: var(--subtle); line-height: 1.7;
-  margin: 0;
-}
-.highlight-box strong { color: var(--white); font-weight: 600; }
+.highlight-box p { font-size: 0.9375rem; color: var(--gray-600); line-height: 1.7; margin: 0; }
+.highlight-box strong { color: var(--obsidian); font-weight: 600; }
 
 .disclaimer-box {
-  background: rgba(201,149,42,0.06); border: 1px solid var(--gold-border);
-  border-radius: 10px; padding: 20px 24px; margin: 24px 0;
+  background: var(--gold-soft); border: 1px solid var(--gold-border);
+  border-radius: 10px; padding: 20px 24px; margin: 20px 0;
 }
 .disclaimer-box p {
-  font-size: 0.875rem; color: var(--subtle); line-height: 1.65;
-  margin: 0; font-family: var(--mono);
+  font-size: 0.8125rem; color: var(--gray-600); line-height: 1.7;
+  margin: 0; font-family: var(--mono); letter-spacing: 0.01em;
 }
 
 /* FOOTER */
 footer {
-  padding: 36px 48px; border-top: 1px solid var(--border);
+  padding: 40px 48px; background: var(--obsidian);
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 16px;
-  background: var(--surface);
 }
-.footer-copy { font-size: 0.8125rem; color: var(--muted); }
+.footer-copy { font-size: 0.8125rem; color: var(--steel-mist); }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a {
-  font-size: 0.8125rem; color: var(--muted); text-decoration: none;
+  font-size: 0.8125rem; color: var(--gray-400); text-decoration: none;
   transition: color 0.2s;
 }
-.footer-links a:hover { color: var(--subtle); }
+.footer-links a:hover { color: var(--gold); }
 
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
-  .page-hero { padding: 100px 20px 48px; }
-  .content-wrap { padding: 48px 20px 80px; }
+  .nav-back span { display: none; }
+  .page-hero { padding: 112px 20px 44px; }
+  .content-wrap { padding: 48px 20px 72px; }
   footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
 }
 </style>
@@ -185,12 +191,12 @@ footer {
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">BAMS Technology</a>
+  <a href="/" class="nav-logo"><span class="dot"></span>BAMS Technology</a>
   <a href="/" class="nav-back">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M10 12L6 8l4-4"/>
     </svg>
-    Back to Home
+    <span>Back to Home</span>
   </a>
 </nav>
 
@@ -314,10 +320,10 @@ footer {
     <h2>15. Contact Us</h2>
     <p>If you have questions about these Terms of Service, please contact us:</p>
     <ul>
-      <li><strong style="color:var(--white)">Company:</strong> BAMS Technology LLC</li>
-      <li><strong style="color:var(--white)">Email:</strong> <a href="mailto:alex.zilberberg@bamstechnology.com">alex.zilberberg@bamstechnology.com</a></li>
-      <li><strong style="color:var(--white)">Phone:</strong> <a href="tel:+16463319331">(646) 331-9331</a></li>
-      <li><strong style="color:var(--white)">Website:</strong> <a href="https://bamstechnology.com">bamstechnology.com</a></li>
+      <li><span class="label-strong">Company:</span> BAMS Technology LLC</li>
+      <li><span class="label-strong">Email:</span> <a href="mailto:alex.zilberberg@bamstechnology.com">alex.zilberberg@bamstechnology.com</a></li>
+      <li><span class="label-strong">Phone:</span> <a href="tel:+16463319331">(646) 331-9331</a></li>
+      <li><span class="label-strong">Website:</span> <a href="https://bamstechnology.com">bamstechnology.com</a></li>
     </ul>
   </div>
 
