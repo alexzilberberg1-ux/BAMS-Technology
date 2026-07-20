@@ -72,10 +72,10 @@
 
   <footer style="background:{{ navyDark }};padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
     <span style="font-size:0.8125rem;color:#8B92A0">© 2026 BAMS Technology. All rights reserved.</span>
-    <div style="display:flex;gap:24px">
-      <a href="#contact" style="font-size:0.8125rem;color:#9CA3AF">Contact</a>
-      <a href="#privacy" style="font-size:0.8125rem;color:#9CA3AF">Privacy Policy</a>
-      <a href="#terms" style="font-size:0.8125rem;color:#9CA3AF">Terms of Service</a>
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+      <sc-for list="{{ footerItems }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}" style="color:#9CA3AF;font-size:0.8125rem">{{ item.label }}</a>
+      </sc-for>
     </div>
   </footer>
 
@@ -84,6 +84,11 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentBlue&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2F5FFF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;navyDark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0E1A2B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;}}">
 class Component extends DCLogic {
+  state = { data: null };
+  async componentDidMount() {
+    const mod = await import('./bams-data.js');
+    this.setState({ data: mod });
+  }
   sections = [
     { title: '1. Information We Collect', blocks: [
       { h3: 'Information You Provide Directly', p: 'When you contact us, request a quote, or engage our services, we may collect:' },
@@ -137,7 +142,8 @@ class Component extends DCLogic {
   renderVals() {
     const accentBlue = this.props.accentBlue ?? '#2F5FFF';
     const navyDark = this.props.navyDark ?? '#0E1A2B';
-    return { accentBlue, navyDark, accentSoft: 'rgba(47,95,255,0.12)', sections: this.sections };
+    const d = this.state.data;
+    return { accentBlue, navyDark, accentSoft: 'rgba(47,95,255,0.12)', sections: this.sections, footerItems: d ? d.footerCompanyItems() : [] };
   }
 }
 
