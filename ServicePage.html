@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;-webkit-font-smoothing:antialiased}
+  a{color:{{ accentBlue }};text-decoration:none}
+  a:hover{color:{{ navyDark }}}
+  button{font:inherit}
+</style>
+</helmet>
+
+<div style="font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#4B5563;min-height:100vh">
+
+  <nav style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 48px;height:72px;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB">
+    <a href="index.dc.html" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:{{ accentBlue }};letter-spacing:-0.02em;justify-self:start">
+      <img src="BAMS_Logo_Blue.png" alt="BAMS logo" style="height:50px;width:60px">
+      BAMS TECHNOLOGY
+    </a>
+    <div style="display:flex;align-items:center;gap:32px;font-family:'JetBrains Mono',monospace;font-size:0.92rem;letter-spacing:0.08em;color:{{ accentBlue }};justify-self:center">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}">{{ item.label }}</a>
+      </sc-for>
+    </div>
+    <div></div>
+  </nav>
+
+  <section style="padding:140px 48px 72px;background:#F9FAFB;border-bottom:1px solid #E5E7EB">
+    <div style="max-width:1280px;margin:0 auto">
+      <a href="index.dc.html" style="color:{{ accentBlue }};font-family:'JetBrains Mono',monospace;font-size:0.8rem;display:inline-block;margin-bottom:24px">← Back to Home</a>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:16px">// BAMS SERVICE</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2rem,4vw,2.9rem);color:{{ navyDark }};letter-spacing:-0.02em;margin:0 0 20px">{{ currentService.title }}</h1>
+      <p style="color:#4B5563;font-size:1.1rem;max-width:560px;line-height:1.6;margin:0 0 24px">{{ currentService.description }}</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ currentService.tags }}" as="t" hint-placeholder-count="4">
+          <span style="border:1px solid #D1D5DB;color:#6B7280;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.05em;padding:6px 12px">{{ t }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ hasChallenges }}" hint-placeholder-val="{{ false }}">
+    <section style="background:#F9FAFB;padding:80px 48px">
+      <div style="max-width:1280px;margin:0 auto">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// THE PROBLEM</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:{{ navyDark }};margin:0 0 40px;letter-spacing:-0.02em">Why this keeps IT teams up at night.</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E5E7EB;border:1px solid #E5E7EB">
+          <sc-for list="{{ challenges }}" as="ch" hint-placeholder-count="4">
+            <div style="background:#fff;padding:28px">
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;color:{{ navyDark }};margin:0 0 10px">{{ ch.title }}</h3>
+              <p style="font-size:0.88rem;color:#6B7280;line-height:1.6;margin:0">{{ ch.desc }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ hasCapabilities }}" hint-placeholder-val="{{ false }}">
+    <section style="padding:80px 48px">
+      <div style="max-width:1280px;margin:0 auto">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// CORE CAPABILITIES</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:{{ navyDark }};margin:0 0 40px;letter-spacing:-0.02em">Everything you get.</h2>
+        <div style="display:flex;flex-direction:column;gap:1px;background:#E5E7EB;border:1px solid #E5E7EB">
+          <sc-for list="{{ capabilities }}" as="cap" hint-placeholder-count="5">
+            <div style="background:#fff">
+              <button onClick="{{ cap.toggle }}" style="width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+                <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;color:{{ navyDark }};margin:0">{{ cap.title }}</h3>
+                <span style="color:{{ accentBlue }};flex-shrink:0;transform:{{ cap.chevronTransform }};transition:transform 0.2s">▾</span>
+              </button>
+              <sc-if value="{{ cap.isOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:0 28px 26px;display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:start">
+                  <p style="font-size:0.9rem;color:#4B5563;line-height:1.7;margin:0">{{ cap.description }}</p>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;align-content:flex-start">
+                    <sc-for list="{{ cap.items }}" as="it" hint-placeholder-count="5">
+                      <span style="border:1px solid #D1D5DB;color:#6B7280;font-family:'JetBrains Mono',monospace;font-size:0.68rem;padding:6px 12px">{{ it.text }}</span>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{ notHasCapabilities }}" hint-placeholder-val="{{ true }}">
+    <section style="padding:80px 48px">
+      <div style="max-width:1280px;margin:0 auto">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// WHAT'S INCLUDED</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:{{ navyDark }};margin:0 0 40px;letter-spacing:-0.02em">Everything you get.</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E5E7EB;border:1px solid #E5E7EB">
+          <sc-for list="{{ currentFeatures }}" as="f" hint-placeholder-count="4">
+            <div style="background:#fff;padding:26px">
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.98rem;color:{{ navyDark }};margin:0 0 8px">{{ f.title }}</h3>
+              <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;margin:0">Included as part of your flat-rate monthly plan — no surprise line items.</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ hasWhyChoose }}" hint-placeholder-val="{{ false }}">
+    <section style="background:{{ navyDark }};padding:80px 48px">
+      <div style="max-width:1280px;margin:0 auto">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlueLight }};margin-bottom:14px">// WHY BAMS</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:#fff;margin:0 0 40px;letter-spacing:-0.02em">Why organizations choose BAMS.</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.1)">
+          <sc-for list="{{ whyChoose }}" as="wc" hint-placeholder-count="4">
+            <div style="background:{{ navyDark }};padding:28px">
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;color:{{ accentBlueLight }};margin:0 0 10px">{{ wc.title }}</h3>
+              <p style="font-size:0.88rem;color:#A9B4C6;line-height:1.6;margin:0">{{ wc.desc }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ hasProcess4 }}" hint-placeholder-val="{{ false }}">
+    <section style="background:#F9FAFB;padding:80px 48px">
+      <div style="max-width:1280px;margin:0 auto">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// HOW IT WORKS</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:{{ navyDark }};margin:0 0 32px;letter-spacing:-0.02em">How we deliver {{ currentService.title }}.</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E5E7EB;border:1px solid #E5E7EB">
+          <sc-for list="{{ process4 }}" as="ps" hint-placeholder-count="4">
+            <div style="background:#fff;padding:30px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:1.8rem;font-weight:700;color:#F3F4F6;margin-bottom:10px">{{ ps.n }}</div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;color:{{ navyDark }};margin:0 0 8px">{{ ps.title }}</h3>
+              <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;margin:0">{{ ps.desc }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{ notHasProcess4 }}" hint-placeholder-val="{{ true }}">
+    <section style="background:#F9FAFB;padding:80px 48px">
+      <div style="max-width:1280px;margin:0 auto">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// HOW IT WORKS</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:{{ navyDark }};margin:0 0 32px;letter-spacing:-0.02em">How {{ currentService.title }} works.</h2>
+        <div style="background:#fff;border:1px solid #E5E7EB;padding:56px 32px;display:flex;align-items:center;justify-content:center;position:relative;min-height:340px">
+          <div style="background:{{ navyDark }};color:#fff;padding:18px 28px;text-align:center;z-index:2;box-shadow:0 8px 24px rgba(14,26,43,0.25)">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem">{{ currentDiagram.center.label }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:{{ accentBlueLight }};letter-spacing:0.08em;margin-top:4px">{{ currentDiagram.center.sublabel }}</div>
+          </div>
+          <div style="position:absolute;inset:32px;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:16px;pointer-events:none">
+            <sc-for list="{{ currentDiagram.satellites }}" as="sat" hint-placeholder-count="4">
+              <div style="border:1px solid #D1D5DB;background:#F9FAFB;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px">
+                <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:0.75rem;color:{{ navyDark }};letter-spacing:0.05em">{{ sat.label }}</div>
+                <div style="font-size:0.68rem;color:#9CA3AF;margin-top:2px">{{ sat.sublabel }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section style="background:{{ navyDark }};padding:80px 48px;text-align:center">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.9rem;color:#fff;margin:0 0 16px;letter-spacing:-0.02em">Ready to get started?</h2>
+    <p style="color:#A9B4C6;margin:0 0 32px">Get in touch to talk through your environment. No obligation, no pressure.</p>
+    <a href="index.dc.html" style="display:inline-block;border:1px solid rgba(255,255,255,0.3);color:#fff;font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.08em;font-weight:600;padding:15px 28px">BACK TO HOME</a>
+  </section>
+
+  <footer style="background:{{ navyDark }};padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+    <span style="font-size:0.8125rem;color:#8B92A0">© 2026 BAMS Technology. All rights reserved.</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+      <sc-for list="{{ footerItems }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}" style="color:#9CA3AF;font-size:0.8125rem">{{ item.label }}</a>
+      </sc-for>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;serviceKey&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;managed-it&quot;,&quot;options&quot;:[&quot;managed-it&quot;,&quot;cybersecurity&quot;,&quot;security-cameras&quot;,&quot;custom-software&quot;,&quot;ai-integration&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;accentBlue&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2F5FFF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;navyDark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0E1A2B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;panelBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#EAF1F8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;}}">
+class Component extends DCLogic {
+  state = { data: null, openCap: 0 };
+  toggleCapability = (i) => this.setState(s => ({ openCap: s.openCap === i ? -1 : i }));
+  async componentDidMount() {
+    const mod = await import('./bams-data.js');
+    this.setState({ data: mod });
+  }
+  renderVals() {
+    const accentBlue = this.props.accentBlue ?? '#2F5FFF';
+    const navyDark = this.props.navyDark ?? '#0E1A2B';
+    const base = { accentBlue, navyDark, accentBlueLight: 'oklch(from ' + accentBlue + ' calc(l + 0.15) c h)', panelBg: this.props.panelBg ?? '#EAF1F8' };
+    const d = this.state.data;
+    const key = this.props.serviceKey || 'managed-it';
+    if (!d) return { ...base, currentService: {}, currentFeatures: [], challenges: [], whyChoose: [], process4: [], capabilities: [], hasChallenges: false, hasCapabilities: false, notHasCapabilities: true, hasWhyChoose: false, hasProcess4: false, notHasProcess4: true, navItems: [], footerItems: [] };
+    const currentService = d.services.find(s => s.key === key);
+    const currentDiagram = d.diagramMap[key];
+    const currentFeatures = d.featuresMap[key].map(t => ({ title: t }));
+    const hasChallenges = !!(currentService && currentService.challenges);
+    const hasCapabilities = !!(currentService && currentService.capabilities);
+    const hasWhyChoose = !!(currentService && currentService.whyChoose);
+    const hasProcess4 = !!(currentService && currentService.process4);
+    const capabilities = hasCapabilities ? currentService.capabilities.map((c, i) => {
+      const isOpen = this.state.openCap === i;
+      return { ...c, items: c.items.map(t => ({ text: t })), isOpen, toggle: () => this.toggleCapability(i), chevronTransform: isOpen ? 'rotate(180deg)' : 'none' };
+    }) : [];
+    return {
+      ...base,
+      currentService, currentDiagram, currentFeatures,
+      hasChallenges, hasCapabilities, notHasCapabilities: !hasCapabilities,
+      hasWhyChoose, hasProcess4, notHasProcess4: !hasProcess4,
+      capabilities,
+      challenges: currentService.challenges || [],
+      whyChoose: currentService.whyChoose || [],
+      process4: currentService.process4 || [],
+      navItems: d.navItemsFor(), footerItems: d.footerCompanyItems(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

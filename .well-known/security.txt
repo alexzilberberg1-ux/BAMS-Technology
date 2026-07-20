@@ -1,4 +1,0 @@
-Contact: mailto:alex.zilberberg@bamstechnology.com
-Expires: 2027-07-16T00:00:00.000Z
-Preferred-Languages: en
-Canonical: https://bamstechnology.com/.well-known/security.txt
