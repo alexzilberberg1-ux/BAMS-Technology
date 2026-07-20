@@ -62,6 +62,7 @@ export const partnersRaw = [
   ['CyberArk', 'https://cdn.prod.website-files.com/68ea9ef24b5b7ead04262e06/6931acec3cc03d003da87ab0_CyberArk.png'],
   ['Voxility', 'https://cdn.prod.website-files.com/68ea9ef24b5b7ead04262e06/68f38b8dae8839f16921eae7_image%205.webp'],
   ['SIXPAC', 'assets/partners/sixpac-logo.png'],
+  ['Jungle Creatives', 'assets/partners/jungle-creatives-logo.svg'],
 ];
 
 export const featuresMap = {
@@ -115,6 +116,10 @@ export const partnerPrograms = [
     tagline: 'Custom software engineering, delivered by a dedicated nearshore team.',
     description: 'A Swiss company driving software engineering excellence from its Serbia-based R&D center — custom software, QA, DevOps, and long-term team extension for complex technical projects.',
     highlights: [{ value: '4 Years', label: 'Avg Engagement' }, { value: 'ISO 27001', label: 'Certified' }, { value: 'Swiss-Led', label: 'Delivery' }] },
+  { name: 'Jungle Creatives', logoUrl: 'assets/partners/jungle-creatives-logo.svg', href: 'https://junglecreatives.com/',
+    tagline: 'A 360° creative agency for brands ready to grow online.',
+    description: 'Jungle Creatives handles branding, web & app development, digital marketing, and strategy for clients who need more than IT — a full creative partner to build and grow their digital presence.',
+    highlights: [{ value: '360°', label: 'Full-Service Agency' }, { value: 'Branding', label: 'Web · Marketing · Strategy' }, { value: 'Global', label: 'Client Roster' }] },
 ];
 
 export const pageFiles = {
