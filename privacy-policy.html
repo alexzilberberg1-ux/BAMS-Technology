@@ -86,7 +86,7 @@
 class Component extends DCLogic {
   state = { data: null };
   async componentDidMount() {
-    const mod = await import('./bams-data.js');
+    const mod = await import('./bams-data.js?v=2');
     this.setState({ data: mod });
   }
   sections = [

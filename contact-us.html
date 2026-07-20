@@ -134,7 +134,7 @@ class Component extends DCLogic {
     this.setState({ note: "Opening your email client with this message pre-filled — just hit send." });
   };
   async componentDidMount() {
-    const mod = await import('./bams-data.js');
+    const mod = await import('./bams-data.js?v=2');
     this.setState({ data: mod });
   }
   renderVals() {
