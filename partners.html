@@ -16,6 +16,8 @@
   body{margin:0;-webkit-font-smoothing:antialiased}
   a{color:{{ accentBlue }};text-decoration:none}
   a:hover{color:{{ navyDark }}}
+  .svc-nav-menu{opacity:0;visibility:hidden;transform:translate(-50%,4px);transition:opacity .15s ease,visibility .15s ease,transform .15s ease}
+  .svc-nav-drop:hover .svc-nav-menu,.svc-nav-drop:focus-within .svc-nav-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
 </style>
 </helmet>
 
@@ -28,7 +30,19 @@
     </a>
     <div style="display:flex;align-items:center;gap:32px;font-family:'JetBrains Mono',monospace;font-size:0.92rem;letter-spacing:0.08em;color:{{ accentBlue }};justify-self:center">
       <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
-        <a href="{{ item.href }}">{{ item.label }}</a>
+        <sc-if value="{{ item.hasDropdown }}" hint-placeholder-val="{{ false }}">
+          <div class="svc-nav-drop" style="position:relative">
+            <a href="{{ item.href }}" style="display:flex;align-items:center;gap:5px">{{ item.label }} <span style="font-size:0.7em">▾</span></a>
+            <div class="svc-nav-menu" style="position:absolute;top:100%;left:50%;z-index:60;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:10px;box-shadow:0 16px 32px rgba(14,26,43,0.12);padding:8px;min-width:220px">
+              <sc-for list="{{ item.dropdownItems }}" as="d" hint-placeholder-count="5">
+                <a href="{{ d.href }}" style="display:block;padding:10px 14px;border-radius:6px;color:{{ navyDark }};font-family:'Inter',sans-serif;font-weight:500;font-size:0.85rem;letter-spacing:normal">{{ d.label }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ item.notDropdown }}" hint-placeholder-val="{{ true }}">
+          <a href="{{ item.href }}">{{ item.label }}</a>
+        </sc-if>
       </sc-for>
     </div>
     <div></div>

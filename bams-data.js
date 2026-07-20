@@ -126,12 +126,13 @@ export const pageFiles = {
 };
 
 export function navItemsFor() {
+  const serviceLinks = services.map((s) => ({ label: s.title, href: s.file }));
   return [
-    { label: 'HOME', href: 'index.html' },
-    { label: 'SERVICES', href: 'index.html#services-section' },
-    { label: 'PARTNERS', href: 'partners.html' },
-    { label: 'CASE STUDIES', href: 'case-studies.html' },
-    { label: 'CONTACT', href: 'contact-us.html' },
+    { label: 'HOME', href: 'index.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
+    { label: 'SERVICES', href: 'index.html#services-section', hasDropdown: true, notDropdown: false, dropdownItems: serviceLinks },
+    { label: 'PARTNERS', href: 'partners.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
+    { label: 'CASE STUDIES', href: 'case-studies.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
+    { label: 'CONTACT', href: 'contact-us.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
   ];
 }
 
