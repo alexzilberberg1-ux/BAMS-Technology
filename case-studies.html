@@ -19,17 +19,32 @@
   button{font:inherit}
   .svc-nav-menu{opacity:0;visibility:hidden;transform:translate(-50%,4px);transition:opacity .15s ease,visibility .15s ease,transform .15s ease}
   .svc-nav-drop:hover .svc-nav-menu,.svc-nav-drop:focus-within .svc-nav-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .nav-toggle-input{display:none}
+  .nav-toggle-label{display:none;cursor:pointer;justify-self:end}
+  @media (max-width:900px){
+    .nav-toggle-label{display:flex !important;align-items:center;justify-content:center;width:40px;height:40px}
+    .brand-link{font-size:0.85rem !important;white-space:nowrap;gap:8px !important}
+    .brand-link img{height:38px !important;width:46px !important}
+    .nav-links{position:absolute !important;top:100% !important;left:0 !important;right:0 !important;display:none !important;flex-direction:column !important;align-items:stretch !important;gap:2px !important;background:#fff !important;border-bottom:1px solid #E5E7EB !important;padding:12px 24px 20px !important;box-shadow:0 16px 32px rgba(14,26,43,0.08) !important}
+    .nav-toggle-input:checked ~ .nav-links{display:flex !important}
+    .nav-links a{padding:10px 0}
+    .svc-nav-drop{position:static !important}
+    .svc-nav-menu{position:static !important;opacity:1 !important;visibility:visible !important;transform:none !important;box-shadow:none !important;border:none !important;padding:0 0 4px 16px !important;min-width:0 !important;background:transparent !important}
+    .px-page{padding-left:20px !important;padding-right:20px !important}
+    .grid-3{grid-template-columns:1fr !important}
+  }
 </style>
 </helmet>
 
 <div style="font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#4B5563;min-height:100vh">
 
-  <nav style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 48px;height:72px;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:{{ accentBlue }};letter-spacing:-0.02em;justify-self:start">
+  <nav class="px-page" style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 48px;height:72px;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB">
+    <a href="index.html" class="brand-link" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:{{ accentBlue }};letter-spacing:-0.02em;justify-self:start">
       <img src="BAMS_Logo_Blue.png" alt="BAMS logo" style="height:50px;width:60px">
       BAMS TECHNOLOGY
     </a>
-    <div style="display:flex;align-items:center;gap:32px;font-family:'JetBrains Mono',monospace;font-size:0.92rem;letter-spacing:0.08em;color:{{ accentBlue }};justify-self:center">
+    <input type="checkbox" id="navToggle" class="nav-toggle-input">
+    <div class="nav-links" style="display:flex;align-items:center;gap:32px;font-family:'JetBrains Mono',monospace;font-size:0.92rem;letter-spacing:0.08em;color:{{ accentBlue }};justify-self:center">
       <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
         <sc-if value="{{ item.hasDropdown }}" hint-placeholder-val="{{ false }}">
           <div class="svc-nav-drop" style="position:relative">
@@ -46,19 +61,21 @@
         </sc-if>
       </sc-for>
     </div>
-    <div></div>
+    <label for="navToggle" class="nav-toggle-label" style="justify-self:end">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5H20M2 11H20M2 17H20" stroke="{{ navyDark }}" stroke-width="2" stroke-linecap="round"/></svg>
+    </label>
   </nav>
 
   <sc-if value="{{ notDetail }}" hint-placeholder-val="{{ true }}">
-    <section style="padding:140px 48px 72px;background:#F9FAFB;border-bottom:1px solid #E5E7EB">
+    <section class="px-page" style="padding:140px 48px 72px;background:#F9FAFB;border-bottom:1px solid #E5E7EB">
       <div style="max-width:1280px;margin:0 auto">
         <a href="index.html" style="color:{{ accentBlue }};font-family:'JetBrains Mono',monospace;font-size:0.8rem;display:inline-block;margin-bottom:24px">← Back to Home</a>
         <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:16px">// REAL CLIENT OUTCOMES</div>
         <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2rem,4vw,2.9rem);color:{{ navyDark }};letter-spacing:-0.02em;margin:0">Case studies.</h1>
       </div>
     </section>
-    <section style="padding:72px 48px">
-      <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <section class="px-page" style="padding:72px 48px">
+      <div class="grid-3" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
         <sc-for list="{{ caseStudies }}" as="c" hint-placeholder-count="3">
           <button onClick="{{ c.onClick }}" style="background:#F9FAFB;border:1px solid #E5E7EB;text-align:left;cursor:pointer;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:260px;font:inherit">
             <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;color:{{ accentBlue }}">{{ c.industry }}</div>
@@ -72,7 +89,7 @@
   </sc-if>
 
   <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
-    <section style="padding:140px 48px 72px;background:#F9FAFB;border-bottom:1px solid #E5E7EB">
+    <section class="px-page" style="padding:140px 48px 72px;background:#F9FAFB;border-bottom:1px solid #E5E7EB">
       <div style="max-width:900px;margin:0 auto">
         <button onClick="{{ backToList }}" style="background:none;border:none;color:{{ accentBlue }};font-family:'JetBrains Mono',monospace;font-size:0.8rem;cursor:pointer;padding:0;margin-bottom:24px">← Back to Case Studies</button>
         <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:16px">{{ currentCaseStudy.industry }}</div>
@@ -80,7 +97,7 @@
         <div style="display:inline-block;background:{{ navyDark }};color:#fff;font-size:0.85rem;font-weight:600;padding:10px 18px">{{ currentCaseStudy.result }}</div>
       </div>
     </section>
-    <section style="padding:72px 48px">
+    <section class="px-page" style="padding:72px 48px">
       <div style="max-width:900px;margin:0 auto">
         <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.2rem;color:{{ navyDark }};margin:0 0 12px">The Challenge</h2>
         <p style="font-size:1rem;line-height:1.75;color:#4B5563;margin:0 0 40px">{{ currentCaseStudy.challenge }}</p>
@@ -99,7 +116,7 @@
     </section>
   </sc-if>
 
-  <footer style="background:{{ navyDark }};padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+  <footer class="px-page" style="background:{{ navyDark }};padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
     <span style="font-size:0.8125rem;color:#8B92A0">© 2026 BAMS Technology. All rights reserved.</span>
     <div style="display:flex;gap:24px;flex-wrap:wrap">
       <sc-for list="{{ footerItems }}" as="item" hint-placeholder-count="5">
