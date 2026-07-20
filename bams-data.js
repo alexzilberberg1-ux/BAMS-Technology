@@ -122,6 +122,7 @@ export const pageFiles = {
   'security-cameras': 'security-cameras.html', 'custom-software': 'custom-software.html', 'ai-integration': 'ai-integration.html',
   'partners': 'partners.html', 'case-studies': 'case-studies.html',
   'privacy-policy': 'privacy-policy.html', 'terms-of-service': 'terms-of-service.html',
+  'contact-us': 'contact-us.html',
 };
 
 export function navItemsFor() {
@@ -130,7 +131,7 @@ export function navItemsFor() {
     { label: 'SERVICES', href: 'index.html#services-section' },
     { label: 'PARTNERS', href: 'partners.html' },
     { label: 'CASE STUDIES', href: 'case-studies.html' },
-    { label: 'CONTACT', href: 'index.html' },
+    { label: 'CONTACT', href: 'contact-us.html' },
   ];
 }
 
@@ -139,6 +140,7 @@ export function footerCompanyItems() {
     { label: 'Services', href: 'index.html#services-section' },
     { label: 'Partners', href: 'partners.html' },
     { label: 'Case Studies', href: 'case-studies.html' },
+    { label: 'Contact', href: 'contact-us.html' },
     { label: 'Privacy Policy', href: 'privacy-policy.html' },
     { label: 'Terms of Service', href: 'terms-of-service.html' },
   ];

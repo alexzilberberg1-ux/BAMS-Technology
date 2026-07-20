@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;-webkit-font-smoothing:antialiased}
+  a{color:{{ accentGold }};text-decoration:none}
+  button{font:inherit}
+  ::placeholder{color:#6B7280}
+  input,textarea{outline:none}
+  input:focus,textarea:focus{border-color:{{ accentGold }} !important}
+</style>
+</helmet>
+
+<div style="font-family:'Inter',system-ui,sans-serif;background:{{ navyDark }};color:#C7CDD8;min-height:100vh">
+
+  <nav style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 48px;height:72px;background:rgba(14,26,43,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08)">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:#FFFFFF;letter-spacing:-0.02em;justify-self:start">
+      <img src="BAMS_Logo_Blue.png" alt="BAMS logo" style="height:50px;width:60px">
+      BAMS TECHNOLOGY
+    </a>
+    <div style="display:flex;align-items:center;gap:32px;font-family:'JetBrains Mono',monospace;font-size:0.92rem;letter-spacing:0.08em;color:#9CA3AF">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}" style="color:#9CA3AF">{{ item.label }}</a>
+      </sc-for>
+    </div>
+    <div></div>
+  </nav>
+
+  <section style="padding:96px 24px 120px">
+    <div style="max-width:640px;margin:0 auto">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.14em;color:{{ accentGold }};margin-bottom:20px">
+        <span style="width:22px;height:1px;background:{{ accentGold }}"></span>
+        COMMAND ENTRY
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-0.02em;color:#FFFFFF;margin:0 0 16px">Let's start the conversation.</h1>
+      <p style="font-size:1rem;line-height:1.7;color:#9CA3AF;margin:0 0 40px">Tell us what's going on with your IT, security, or technology — a question, a quote, or just comparing options. A real person will get back to you within one business day.</p>
+
+      <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:20px">
+        <div>
+          <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accentGold }};margin-bottom:8px">Full Name</label>
+          <input type="text" required="" placeholder="John Smith" value="{{ formName }}" onChange="{{ onNameChange }}" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);color:#FFFFFF;padding:14px 16px;font-size:0.95rem;font-family:'Inter',sans-serif;border-radius:2px">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div>
+            <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accentGold }};margin-bottom:8px">Email</label>
+            <input type="email" required="" placeholder="john@company.com" value="{{ formEmail }}" onChange="{{ onEmailChange }}" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);color:#FFFFFF;padding:14px 16px;font-size:0.95rem;font-family:'Inter',sans-serif;border-radius:2px">
+          </div>
+          <div>
+            <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accentGold }};margin-bottom:8px">Company</label>
+            <input type="text" placeholder="Company name" value="{{ formCompany }}" onChange="{{ onCompanyChange }}" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);color:#FFFFFF;padding:14px 16px;font-size:0.95rem;font-family:'Inter',sans-serif;border-radius:2px">
+          </div>
+        </div>
+        <div>
+          <label style="display:block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accentGold }};margin-bottom:8px">How can we help?</label>
+          <textarea rows="4" placeholder="What challenges are you facing with IT, security, or technology?" value="{{ formMessage }}" onChange="{{ onMessageChange }}" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);color:#FFFFFF;padding:14px 16px;font-size:0.95rem;font-family:'Inter',sans-serif;border-radius:2px;resize:vertical;min-height:110px"></textarea>
+        </div>
+        <button type="submit" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:{{ accentGold }};color:{{ navyDark }};border:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;padding:17px 26px;cursor:pointer;border-radius:2px;margin-top:4px">
+          Send Message →
+        </button>
+        <sc-if value="{{ showNote }}" hint-placeholder-val="{{ false }}">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#9CA3AF;text-align:center;padding-top:4px;margin:0">{{ noteText }}</p>
+        </sc-if>
+      </form>
+
+      <div style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:40px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;margin-bottom:6px">Call Us</div>
+          <a href="tel:+17544447773" style="color:#FFFFFF;font-size:0.95rem">(754) 444-7773</a>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;margin-bottom:6px">Email Us</div>
+          <a href="mailto:info@bamstechnology.com" style="color:#FFFFFF;font-size:0.95rem">info@bamstechnology.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0A1420;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,0.06)">
+    <span style="font-size:0.8125rem;color:#6B7280">© 2026 BAMS Technology. All rights reserved.</span>
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+      <sc-for list="{{ footerItems }}" as="item" hint-placeholder-count="5">
+        <a href="{{ item.href }}" style="color:#9CA3AF;font-size:0.8125rem">{{ item.label }}</a>
+      </sc-for>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentGold&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#D9A441&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;navyDark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0E1A2B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;}}">
+class Component extends DCLogic {
+  state = { data: null, name: '', email: '', company: '', message: '', note: '' };
+  onNameChange = (e) => this.setState({ name: e.target.value });
+  onEmailChange = (e) => this.setState({ email: e.target.value });
+  onCompanyChange = (e) => this.setState({ company: e.target.value });
+  onMessageChange = (e) => this.setState({ message: e.target.value });
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, company, message } = this.state;
+    const subject = encodeURIComponent(`Website inquiry from ${name || 'a visitor'}`);
+    const bodyLines = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      company ? `Company: ${company}` : null,
+      '',
+      message || '(no message provided)',
+    ].filter((l) => l !== null);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:info@bamstechnology.com?subject=${subject}&body=${body}`;
+    this.setState({ note: "Opening your email client with this message pre-filled — just hit send." });
+  };
+  async componentDidMount() {
+    const mod = await import('./bams-data.js');
+    this.setState({ data: mod });
+  }
+  renderVals() {
+    const accentGold = this.props.accentGold ?? '#D9A441';
+    const navyDark = this.props.navyDark ?? '#0E1A2B';
+    const d = this.state.data;
+    return {
+      accentGold, navyDark,
+      formName: this.state.name, formEmail: this.state.email, formCompany: this.state.company, formMessage: this.state.message,
+      onNameChange: this.onNameChange, onEmailChange: this.onEmailChange, onCompanyChange: this.onCompanyChange, onMessageChange: this.onMessageChange,
+      handleSubmit: this.handleSubmit,
+      showNote: !!this.state.note, noteText: this.state.note,
+      navItems: d ? d.navItemsFor() : [],
+      footerItems: d ? d.footerCompanyItems() : [],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
