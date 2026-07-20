@@ -13,23 +13,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
-  body{margin:0;-webkit-font-smoothing:antialiased}
+  body{margin:0;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
   a{color:{{ accentBlue }}}
   a:hover{color:{{ navyDark }}}
   @media (max-width:640px){
     .px-page{padding-left:20px !important;padding-right:20px !important}
+    .legal-nav{gap:10px !important}
+    .legal-brand{font-size:0.85rem !important;gap:6px !important;white-space:nowrap}
+    .legal-back{font-size:0.75rem !important;gap:4px !important;white-space:nowrap}
+  }
+  @media (max-width:340px){
+    .legal-nav{flex-wrap:wrap !important;height:auto !important;padding-top:10px !important;padding-bottom:10px !important;row-gap:6px !important}
   }
 </style>
 </helmet>
 
 <div style="font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#4B5563;min-height:100vh">
 
-  <nav class="px-page" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(255,255,255,0.9);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB">
-    <div style="display:flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:{{ navyDark }};letter-spacing:-0.02em">
+  <nav class="px-page legal-nav" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(255,255,255,0.9);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB">
+    <div class="legal-brand" style="display:flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:{{ navyDark }};letter-spacing:-0.02em">
       <span style="width:8px;height:8px;border-radius:50%;background:{{ accentBlue }};box-shadow:0 0 0 4px {{ accentSoft }}"></span>
       BAMS Technology
     </div>
-    <a href="index.html" style="display:flex;align-items:center;gap:8px;color:#6B7280;font-size:0.9rem;font-weight:500">← Back to Home</a>
+    <a href="index.html" class="legal-back" style="display:flex;align-items:center;gap:8px;color:#6B7280;font-size:0.9rem;font-weight:500">← Back to Home</a>
   </nav>
 
   <div class="px-page" style="padding:80px 40px 56px;text-align:center;background:#F9FAFB;border-bottom:1px solid #E5E7EB">
