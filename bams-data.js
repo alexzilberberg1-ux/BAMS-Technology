@@ -100,7 +100,7 @@ export const tickerItems = ['ACTIVE MONITORING: 247 ENDPOINTS', 'THREAT BLOCKED:
 export const advisoryStats = [{ value: '400+', label: 'Supplier Partners' }, { value: '$0', label: 'Cost to You' }, { value: 'CISSP/CCSP', label: 'Certified Architects' }];
 
 export const partnerPrograms = [
-  { name: 'AIFS', logoUrl: 'assets/partners/ais-logo.png', href: 'https://www.aifsllc.com/',
+  { name: 'AIFS', logoUrl: 'assets/partners/ais-logo.png', logoHeight: 60, href: 'https://www.aifsllc.com/',
     tagline: 'An unbiased second opinion, at no cost to you.',
     description: 'Through our partnership with Advanced Interface Solutions (AIS), you get a dedicated technology advisor sourcing unbiased recommendations from 400+ supplier partners — compensated by the vendor, not by you.',
     highlights: [{ value: '400+', label: 'Supplier Partners' }, { value: '$0', label: 'Cost to You' }, { value: 'CISSP/CCSP', label: 'Certified Architects' }] },
@@ -112,7 +112,7 @@ export const partnerPrograms = [
     tagline: 'Enterprise-grade cybersecurity, backed by 20+ years of expertise.',
     description: 'We Secure delivers managed security services, incident response, and continuous protection for networks, endpoints, and cloud environments — backed by two decades defending critical industries.',
     highlights: [{ value: '24/7', label: 'SOC Monitoring' }, { value: '20+ Years', label: 'Expertise' }, { value: 'EU & US', label: 'Coverage' }] },
-  { name: 'Enlight Engineering', logoUrl: 'assets/partners/enlight-logo.jpg', href: 'https://www.enlight-engineering.com/',
+  { name: 'Enlight Engineering', logoUrl: 'assets/partners/enlight-logo.jpg', logoHeight: 60, href: 'https://www.enlight-engineering.com/',
     tagline: 'Custom software engineering, delivered by a dedicated nearshore team.',
     description: 'A Swiss company driving software engineering excellence from its Serbia-based R&D center — custom software, QA, DevOps, and long-term team extension for complex technical projects.',
     highlights: [{ value: '4 Years', label: 'Avg Engagement' }, { value: 'ISO 27001', label: 'Certified' }, { value: 'Swiss-Led', label: 'Delivery' }] },

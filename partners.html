@@ -63,7 +63,7 @@
         <div style="background:#fff;padding:40px;display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:start">
           <div style="height:60px;display:flex;align-items:center">
             <sc-if value="{{ pp.showLogo }}" hint-placeholder-val="{{ true }}">
-              <img src="{{ pp.logoUrl }}" alt="{{ pp.name }}" style="height:40px;width:auto;max-width:170px;object-fit:contain">
+              <img src="{{ pp.logoUrl }}" alt="{{ pp.name }}" style="height:{{ pp.logoHeight }}px;width:auto;max-width:170px;object-fit:contain">
             </sc-if>
             <sc-if value="{{ pp.noLogo }}" hint-placeholder-val="{{ false }}">
               <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:{{ navyDark }}">{{ pp.name }}</span>
@@ -129,7 +129,7 @@ class Component extends DCLogic {
     const base = { accentBlue, navyDark, panelBg: this.props.panelBg ?? '#EAF1F8' };
     const d = this.state.data;
     if (!d) return { ...base, partnerPrograms: [], partners: [], navItems: [], footerItems: [] };
-    const partnerPrograms = d.partnerPrograms.map(pp => ({ ...pp, noLogo: !pp.logoUrl, showLogo: !!pp.logoUrl }));
+    const partnerPrograms = d.partnerPrograms.map(pp => ({ ...pp, noLogo: !pp.logoUrl, showLogo: !!pp.logoUrl, logoHeight: pp.logoHeight ?? 40 }));
     const partners = d.partnersRaw.map(([name, logoUrl]) => ({ name, logoUrl, showImg: /^https?:/.test(logoUrl), showText: !/^https?:/.test(logoUrl) }));
     return { ...base, partnerPrograms, partners, navItems: d.navItemsFor(), footerItems: d.footerCompanyItems() };
   }
