@@ -1,5 +1,8 @@
 export const services = [
-  { icon: 'monitor', number: '01', title: 'Managed IT (MSP)', description: 'Full-stack IT management with proactive monitoring, help desk, and cloud services — for a predictable monthly fee.', tags: ['Help Desk', 'Cloud', 'Backup', 'Microsoft 365'], key: 'managed-it', file: 'managed-it.html',
+  { icon: 'monitor', number: '01', title: 'AI Integration', description: 'Modernize workflows with AI — custom chatbots, process automation, and intelligent tooling built into the systems you already run.', tags: ['AI Chatbots', 'Workflow Automation', 'LLM Integration', 'Internal Tools'], key: 'ai-integration', file: 'ai-integration.html' },
+  { icon: 'shield', number: '02', title: 'Cybersecurity (MSSP)', description: '24/7 SOC, endpoint protection, penetration testing, and incident response. We stop threats before they become breaches.', tags: ['SOC 24/7', 'EDR/XDR', 'Pen Testing', 'SIEM'], key: 'cybersecurity', file: 'cybersecurity.html' },
+  { icon: 'briefcase', number: '03', title: 'Technology Procurement & Advisory', description: 'Vendor-neutral guidance to source the right technology from a network of trusted providers — we manage evaluation, negotiation, and every step in between, at no added cost to you.', tags: ['Vendor Sourcing', 'Contract Negotiation', 'Unbiased Guidance', 'Vendor Management'], key: 'tech-advisory', file: 'tech-advisory.html' },
+  { icon: 'monitor', number: '04', title: 'Managed IT (MSP)', description: 'Full-stack IT management with proactive monitoring, help desk, and cloud services — for a predictable monthly fee.', tags: ['Help Desk', 'Cloud', 'Backup', 'Microsoft 365'], key: 'managed-it', file: 'managed-it.html',
     challenges: [
       { title: 'Your network has too many blind spots', desc: 'Hybrid offices, cloud apps, and remote logins create gaps that are nearly impossible to track by hand.' },
       { title: 'Every device is a target', desc: 'Laptops, servers, and phones are always on and always exposed — the easiest way in for ransomware and malware.' },
@@ -25,10 +28,8 @@ export const services = [
       { n: '3', title: 'Monitor', desc: 'Watch systems and traffic in real time to catch threats early.' },
       { n: '4', title: 'Respond', desc: 'Contain incidents, limit impact, and restore operations quickly.' },
     ] },
-  { icon: 'shield', number: '02', title: 'Cybersecurity (MSSP)', description: '24/7 SOC, endpoint protection, penetration testing, and incident response. We stop threats before they become breaches.', tags: ['SOC 24/7', 'EDR/XDR', 'Pen Testing', 'SIEM'], key: 'cybersecurity', file: 'cybersecurity.html' },
-  { icon: 'camera', number: '03', title: 'Security Cameras', description: 'Enterprise IP camera systems installed and managed nationwide — remote monitoring, AI analytics, and 24/7 support.', tags: ['IP Cameras', 'AI Analytics', 'Access Control'], key: 'security-cameras', file: 'security-cameras.html' },
-  { icon: 'code', number: '04', title: 'Custom Software', description: 'Bespoke web apps, automation, and integrations built for your exact workflow — no off-the-shelf compromises.', tags: ['Web Apps', 'Automation', 'API Integrations', 'Dashboards'], key: 'custom-software', file: 'custom-software.html' },
-  { icon: 'monitor', number: '05', title: 'AI Integration', description: 'Modernize workflows with AI — custom chatbots, process automation, and intelligent tooling built into the systems you already run.', tags: ['AI Chatbots', 'Workflow Automation', 'LLM Integration', 'Internal Tools'], key: 'ai-integration', file: 'ai-integration.html' },
+  { icon: 'code', number: '05', title: 'Custom Software', description: 'Bespoke web apps, automation, and integrations built for your exact workflow — no off-the-shelf compromises.', tags: ['Web Apps', 'Automation', 'API Integrations', 'Dashboards'], key: 'custom-software', file: 'custom-software.html' },
+  { icon: 'camera', number: '06', title: 'Security Cameras', description: 'Enterprise IP camera systems installed and managed nationwide — remote monitoring, AI analytics, and 24/7 support.', tags: ['IP Cameras', 'AI Analytics', 'Access Control'], key: 'security-cameras', file: 'security-cameras.html' },
 ];
 
 export const caseStudies = [
@@ -71,6 +72,7 @@ export const featuresMap = {
   'security-cameras': ['Nationwide Installation', 'AI-Powered Analytics', 'Remote Live Monitoring', 'Access Control Integration'],
   'custom-software': ['Custom Web Applications', 'Workflow Automation', 'Third-Party API Integrations', 'Internal Dashboards'],
   'ai-integration': ['Custom AI Chatbots', 'Workflow & Process Automation', 'LLM Integrations', 'Internal AI Tooling'],
+  'tech-advisory': ['Vendor-Neutral Sourcing', 'Contract Negotiation Support', 'Cost & Contract Review', 'Ongoing Vendor Management'],
 };
 
 export const diagramMap = {
@@ -79,6 +81,7 @@ export const diagramMap = {
   'security-cameras': { center: { label: 'NVR HUB', sublabel: 'VIDEO MANAGEMENT' }, satellites: [{ label: 'CAMERAS', sublabel: 'IP · PTZ · Fixed' }, { label: 'CLOUD', sublabel: 'Offsite Recording' }, { label: 'AI ENGINE', sublabel: 'Analytics & Alerts' }, { label: 'ACCESS', sublabel: 'Badge · Mobile' }] },
   'custom-software': { center: { label: 'API CORE', sublabel: 'BUSINESS LOGIC' }, satellites: [{ label: 'DATABASE', sublabel: 'Postgres · Redis' }, { label: 'FRONTEND', sublabel: 'Web · Mobile' }, { label: 'INTEGRATIONS', sublabel: '3rd-Party APIs' }, { label: 'AUTOMATION', sublabel: 'Workflows · Jobs' }] },
   'ai-integration': { center: { label: 'AI ENGINE', sublabel: 'MODEL ORCHESTRATION' }, satellites: [{ label: 'CHATBOTS', sublabel: 'Support · Sales · Internal' }, { label: 'WORKFLOWS', sublabel: 'Automated Processes' }, { label: 'LLM APIs', sublabel: 'OpenAI · Anthropic · Azure' }, { label: 'DATA', sublabel: 'Knowledge Bases · CRM' }] },
+  'tech-advisory': { center: { label: 'SOURCING HUB', sublabel: 'VENDOR EVALUATION' }, satellites: [{ label: 'SUPPLIERS', sublabel: 'Vetted Partner Network' }, { label: 'CONTRACTS', sublabel: 'Terms & Pricing' }, { label: 'BUDGET', sublabel: 'Cost Analysis' }, { label: 'SUPPORT', sublabel: 'Ongoing Management' }] },
 };
 
 export const processSteps = [
@@ -125,6 +128,7 @@ export const partnerPrograms = [
 export const pageFiles = {
   'home': 'index.html', 'managed-it': 'managed-it.html', 'cybersecurity': 'cybersecurity.html',
   'security-cameras': 'security-cameras.html', 'custom-software': 'custom-software.html', 'ai-integration': 'ai-integration.html',
+  'tech-advisory': 'tech-advisory.html',
   'partners': 'partners.html', 'case-studies': 'case-studies.html',
   'privacy-policy': 'privacy-policy.html', 'terms-of-service': 'terms-of-service.html',
   'contact-us': 'contact-us.html',
