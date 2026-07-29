@@ -78,8 +78,8 @@
   <section class="px-page" style="padding:80px 48px">
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:1px;background:#E5E7EB">
       <sc-for list="{{ partnerPrograms }}" as="pp" hint-placeholder-count="4">
-        <div class="partner-row" style="background:#fff;padding:40px;display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:start">
-          <div style="height:60px;display:flex;align-items:center">
+        <div class="partner-row" style="background:#fff;padding:40px;display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:center">
+          <div style="height:60px;display:flex;align-items:center;justify-content:center">
             <sc-if value="{{ pp.showLogo }}" hint-placeholder-val="{{ true }}">
               <img src="{{ pp.logoUrl }}" alt="{{ pp.name }}" style="height:{{ pp.logoHeight }};width:auto;max-width:170px;object-fit:contain">
             </sc-if>
