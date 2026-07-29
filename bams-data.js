@@ -100,7 +100,7 @@ export const tickerItems = ['ACTIVE MONITORING: 247 ENDPOINTS', 'THREAT BLOCKED:
 export const advisoryStats = [{ value: '400+', label: 'Supplier Partners' }, { value: '$0', label: 'Cost to You' }, { value: 'CISSP/CCSP', label: 'Certified Architects' }];
 
 export const partnerPrograms = [
-  { name: 'AIFS', logoUrl: 'assets/partners/ais-logo.png', logoHeight: '60px', href: 'https://www.aifsllc.com/',
+  { name: 'AIFS', logoUrl: 'assets/partners/ais-logo.png', logoHeight: '100px', href: 'https://www.aifsllc.com/',
     tagline: 'An unbiased second opinion, at no cost to you.',
     description: 'Through our partnership with Advanced Interface Solutions (AIS), you get a dedicated technology advisor sourcing unbiased recommendations from 400+ supplier partners — compensated by the vendor, not by you.',
     highlights: [{ value: '400+', label: 'Supplier Partners' }, { value: '$0', label: 'Cost to You' }, { value: 'CISSP/CCSP', label: 'Certified Architects' }] },
