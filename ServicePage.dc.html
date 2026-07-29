@@ -14,8 +14,8 @@
 <style>
   *{box-sizing:border-box}
   body{margin:0;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
-  a{color:{{ accentBlue }};text-decoration:none}
-  a:hover{color:{{ navyDark }}}
+  a{color:#3F60B2;text-decoration:none}
+  a:hover{color:#0E1A2B}
   button{font:inherit}
   .svc-nav-menu{opacity:0;visibility:hidden;transform:translate(-50%,4px);transition:opacity .15s ease,visibility .15s ease,transform .15s ease}
   .svc-nav-drop:hover .svc-nav-menu,.svc-nav-drop:focus-within .svc-nav-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
@@ -226,7 +226,7 @@
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;serviceKey&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;managed-it&quot;,&quot;options&quot;:[&quot;managed-it&quot;,&quot;cybersecurity&quot;,&quot;security-cameras&quot;,&quot;custom-software&quot;,&quot;ai-integration&quot;,&quot;tech-advisory&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;accentBlue&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2F5FFF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;navyDark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0E1A2B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;panelBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#EAF1F8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;serviceKey&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;managed-it&quot;,&quot;options&quot;:[&quot;managed-it&quot;,&quot;cybersecurity&quot;,&quot;security-cameras&quot;,&quot;custom-software&quot;,&quot;ai-integration&quot;,&quot;tech-advisory&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;accentBlue&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3F60B2&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;navyDark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0E1A2B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;panelBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#EAF1F8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;}}">
 class Component extends DCLogic {
   state = { data: null, openCap: 0 };
   toggleCapability = (i) => this.setState(s => ({ openCap: s.openCap === i ? -1 : i }));
@@ -235,7 +235,7 @@ class Component extends DCLogic {
     this.setState({ data: mod });
   }
   renderVals() {
-    const accentBlue = this.props.accentBlue ?? '#2F5FFF';
+    const accentBlue = this.props.accentBlue ?? '#3F60B2';
     const navyDark = this.props.navyDark ?? '#0E1A2B';
     const base = { accentBlue, navyDark, accentBlueLight: 'oklch(from ' + accentBlue + ' calc(l + 0.15) c h)', panelBg: this.props.panelBg ?? '#EAF1F8' };
     const d = this.state.data;

@@ -14,8 +14,8 @@
 <style>
   *{box-sizing:border-box}
   body{margin:0;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
-  a{color:{{ accentBlue }}}
-  a:hover{color:{{ navyDark }}}
+  a{color:#3F60B2}
+  a:hover{color:#0E1A2B}
   @media (max-width:640px){
     .px-page{padding-left:20px !important;padding-right:20px !important}
     .legal-nav{gap:10px !important}
@@ -91,7 +91,7 @@
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accentBlue&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2F5FFF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;navyDark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0E1A2B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentBlue&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3F60B2&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;},&quot;navyDark&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0E1A2B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Colors&quot;}}">
 class Component extends DCLogic {
   state = { data: null };
   async componentDidMount() {
@@ -149,7 +149,7 @@ class Component extends DCLogic {
   ];
 
   renderVals() {
-    const accentBlue = this.props.accentBlue ?? '#2F5FFF';
+    const accentBlue = this.props.accentBlue ?? '#3F60B2';
     const navyDark = this.props.navyDark ?? '#0E1A2B';
     const d = this.state.data;
     return { accentBlue, navyDark, accentSoft: 'rgba(47,95,255,0.12)', sections: this.sections, footerItems: d ? d.footerCompanyItems() : [] };
