@@ -126,7 +126,7 @@ export const partnerPrograms = [
 ];
 
 export const pageFiles = {
-  'home': 'index.html', 'managed-it': 'managed-it.html', 'cybersecurity': 'cybersecurity.html',
+  'home': '/', 'managed-it': 'managed-it.html', 'cybersecurity': 'cybersecurity.html',
   'security-cameras': 'security-cameras.html', 'custom-software': 'custom-software.html', 'ai-integration': 'ai-integration.html',
   'tech-advisory': 'tech-advisory.html',
   'partners': 'partners.html', 'case-studies': 'case-studies.html',
@@ -137,8 +137,8 @@ export const pageFiles = {
 export function navItemsFor() {
   const serviceLinks = services.map((s) => ({ label: s.title, href: s.file }));
   return [
-    { label: 'HOME', href: 'index.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
-    { label: 'SERVICES', href: 'index.html#services-section', hasDropdown: true, notDropdown: false, dropdownItems: serviceLinks },
+    { label: 'HOME', href: '/', hasDropdown: false, notDropdown: true, dropdownItems: [] },
+    { label: 'SERVICES', href: '/#services-section', hasDropdown: true, notDropdown: false, dropdownItems: serviceLinks },
     { label: 'PARTNERS', href: 'partners.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
     { label: 'CASE STUDIES', href: 'case-studies.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
     { label: 'CONTACT', href: 'contact-us.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
@@ -147,7 +147,7 @@ export function navItemsFor() {
 
 export function footerCompanyItems() {
   return [
-    { label: 'Services', href: 'index.html#services-section' },
+    { label: 'Services', href: '/#services-section' },
     { label: 'Partners', href: 'partners.html' },
     { label: 'Case Studies', href: 'case-studies.html' },
     { label: 'Contact', href: 'contact-us.html' },
