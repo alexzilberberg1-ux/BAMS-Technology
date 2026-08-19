@@ -3,6 +3,7 @@
 - **Name:** Alex Zilberberg
 - **Role / focus:** Founder / solo operator at BAMS Technology
 - **Company site:** bamstechnology.com — always reference this as my site/domain
+- **Hosting:** Static HTML site; DNS/CDN handled through Cloudflare.
 - **Current projects:** Building out the customer base for BAMS Technology (primary focus). Also juggling other personal/side projects from time to time — ask if context on a specific one would help.
 - **Tech stack / tools I use:** Mixed stack, primarily TypeScript/JavaScript and Python. No strict style preference — follow whatever's idiomatic for the given repo/context.
 - **Branding:** Use the BAMS Technology logo and blue gradient color scheme (deep blue → lighter blue, hexagon/circuit motif) as the default look for anything branded — decks, one-pagers, landing pages, etc. — unless told otherwise.
