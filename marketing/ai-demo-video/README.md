@@ -6,8 +6,15 @@ BAMS Technology's AI integration services via a fictional dental practice
 appointment, then AI document extraction pushing an intake form into a practice
 management system.
 
-- `bams-ai-integration-demo.mp4` — the finished video (H.264, 30 fps, silent —
-  designed for muted autoplay with on-screen captions).
+- `bams-ai-integration-demo.mp4` — the finished video (H.264 + AAC, 30 fps).
+  Captions carry the story even when muted; the soundtrack (music bed + UI
+  sound effects synced to the animation) kicks in when viewers unmute.
+- `audio.py` — synthesizes the soundtrack (`python3 audio.py` → `soundtrack.wav`,
+  needs numpy). Mux with:
+
+  ```
+  ffmpeg -i video.mp4 -i soundtrack.wav -c:v copy -c:a aac -b:a 160k -shortest out.mp4
+  ```
 - `demo.html` — the entire animation as a deterministic `seek(t)` page. Edit
   copy/timing here.
 - `render.mjs` — Playwright renderer. `node render.mjs preview "5,10,20"` for
