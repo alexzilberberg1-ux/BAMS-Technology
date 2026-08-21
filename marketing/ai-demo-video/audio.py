@@ -143,8 +143,9 @@ add(blip(870, 620, 0.12), B+5.9, gain=0.18)
 add(blip(620, 860, 0.12), B+7.45, gain=0.20)                    # bot msg 1
 add(blip(620, 860, 0.12), B+8.65, gain=0.20)                    # bot msg 2
 add(blip(700, 950, 0.10), B+9.05, gain=0.16)                    # chips
-add(tick(), B+10.9, gain=1.6)                                    # chip click
-add(blip(950, 700, 0.09), B+10.92, gain=0.20)
+add(tick(), B+10.4, gain=1.6)                                    # chip tap
+add(blip(950, 700, 0.09), B+10.42, gain=0.20)
+add(blip(870, 620, 0.12), B+11.0, gain=0.18)                     # selection posts as message
 add(chime([nf('C',5), nf('E',5), nf('G',5)], 0.10), B+12.65, gain=0.30)   # booked!
 
 # scene C (offset 20.6)

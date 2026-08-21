@@ -70,8 +70,10 @@ body { font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
 .msg.user { background:linear-gradient(135deg,#1d4fd7,#3f77ff); color:#fff; align-self:flex-end; border-bottom-right-radius:8px; }
 .msg .bk { font-weight:800; }
 .chips { display:flex; gap:16px; align-self:flex-start; }
-.chip { border:3px solid #12b3a2; color:#0d8478; background:#fff; font-size:27px; font-weight:800; padding:16px 28px; border-radius:999px; }
+.chip { border:3px solid #12b3a2; color:#0d8478; background:#fff; font-size:27px; font-weight:800; padding:16px 28px; border-radius:999px; position:relative; }
 .chip.sel { background:#0f9c8d; color:#fff; }
+.tapring { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:50%;
+  border:5px solid #0f9c8d; pointer-events:none; opacity:0; }
 .typing { background:#f0f3f8; border-radius:26px; border-bottom-left-radius:8px; padding:24px 30px; align-self:flex-start; display:flex; gap:12px; }
 .typing i { width:16px; height:16px; border-radius:50%; background:#9aa7bd; display:block; }
 .inputbar { margin:0 30px 30px 30px; border:2px solid #e2e7f0; border-radius:999px; height:88px; display:flex; align-items:center; padding:0 16px 0 32px; gap:16px; }
@@ -182,9 +184,10 @@ body { font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
           <div class="msg bot" id="m2">Yes — we’re <span class="bk">in-network with Delta Dental PPO</span> ✓</div>
           <div class="msg bot" id="m3">Dr. Patel has two Saturday openings for a cleaning. Want me to book one?</div>
           <div class="chips" id="chips">
-            <div class="chip" id="chip1">Sat · 9:15 AM</div>
+            <div class="chip" id="chip1">Sat · 9:15 AM<span class="tapring" id="tapring"></span></div>
             <div class="chip" id="chip2">Sat · 11:30 AM</div>
           </div>
+          <div class="msg user" id="m1b">Sat · 9:15 AM 👍</div>
           <div class="typing" id="ty2"><i></i><i></i><i></i></div>
           <div class="msg bot" id="m4">You’re booked, Sarah! 🎉<br><span class="bk">Cleaning · Sat, Aug 29 · 9:15 AM</span><br>I’ve texted you the new-patient intake form to fill out before your visit.</div>
         </div>
@@ -323,9 +326,6 @@ function renderB(t) {
 
   popIn($('m0'), t, 1.5);
 
-  // scrolled-to-bottom emulation: anchor top while content fits, bottom once it overflows
-  const mm = $('msgs');
-  mm.style.justifyContent = mm.scrollHeight > mm.clientHeight ? 'flex-end' : 'flex-start';
 
   // input typing
   const it = $('itext');
@@ -344,30 +344,42 @@ function renderB(t) {
   show($('ty1'), ty1on); if (ty1on) { $('ty1').style.opacity = 1; dots($('ty1'), t); }
   show($('m2'), t >= 7.4); if (t >= 7.4) popIn($('m2'), t, 7.4);
   show($('m3'), t >= 8.6); if (t >= 8.6) popIn($('m3'), t, 8.6);
-  show($('chips'), t >= 9.0 && t < 11.55); if (t >= 9.0) popIn($('chips'), t, 9.0);
+  show($('chips'), t >= 9.0 && t < 10.95); if (t >= 9.0) popIn($('chips'), t, 9.0);
+  show($('cur'), false);
 
-  // cursor tap on chip1
-  const cur = $('cur');
-  const curOn = t >= 9.9 && t < 11.5;
-  show(cur, curOn);
-  if (curOn) {
-    const p = eio(seg(t, 9.9, 10.85));
-    const c1 = $('chip1').getBoundingClientRect();
-    const br = document.querySelector('.browser').getBoundingClientRect();
-    const tx = c1.left - br.left + c1.width * 0.6, ty = c1.top - br.top + c1.height * 0.7;
-    const sx = 620, sy = 1120;
-    cur.style.left = (sx + (tx - sx) * p - 28) + 'px';
-    cur.style.top = (sy + (ty - sy) * p - 28) + 'px';
-    const press = t >= 10.85 && t < 11.15;
-    cur.style.transform = press ? 'scale(0.72)' : 'scale(1)';
-    cur.style.opacity = 0.4 + 0.6 * p * (1 - seg(t, 11.3, 11.5));
+  // tap ripple directly on the 9:15 chip
+  const ring = $('tapring');
+  const rp = seg(t, 10.3, 10.85);
+  if (rp > 0 && rp < 1) {
+    const d = 26 + 110 * eo(rp);
+    ring.style.width = ring.style.height = d + 'px';
+    ring.style.opacity = 1 - rp;
+  } else {
+    ring.style.opacity = 0;
   }
-  if (t >= 10.9) $('chip1').classList.add('sel'); else $('chip1').classList.remove('sel');
-  $('chip2').style.opacity = t >= 10.9 ? 0.35 : 1;
+  const press = t >= 10.35 && t < 10.6;
+  $('chip1').style.transform = press ? 'scale(0.9)' : 'scale(1)';
+  if (t >= 10.5) $('chip1').classList.add('sel'); else $('chip1').classList.remove('sel');
+  $('chip2').style.opacity = t >= 10.5 ? 0.35 : 1;
+
+  // selection becomes a user message so the thread visibly advances
+  show($('m1b'), t >= 10.95); if (t >= 10.95) popIn($('m1b'), t, 10.95);
 
   const ty2on = t >= 11.6 && t < 12.6;
   show($('ty2'), ty2on); if (ty2on) { $('ty2').style.opacity = 1; dots($('ty2'), t); }
   show($('m4'), t >= 12.6); if (t >= 12.6) popIn($('m4'), t, 12.6);
+
+  // scrolled-to-bottom emulation: anchor top while content fits, bottom once it
+  // overflows. Measure content height directly — scrollHeight is unreliable under
+  // flex-end (overflow above the scroll origin isn't counted), which oscillates.
+  const mm = $('msgs');
+  let contentH = 0, shown = 0;
+  for (const k of mm.children) {
+    if (k.style.display === 'none') continue;
+    contentH += k.offsetHeight; shown++;
+  }
+  contentH += 20 * Math.max(0, shown - 1);
+  mm.style.justifyContent = (contentH > mm.clientHeight || t >= 8.65) ? 'flex-end' : 'flex-start';
 }
 
 // scene C (local time): slide-in 0-0.7; badge 0.5; scan 0.9-2.6; doc highlights follow scan;

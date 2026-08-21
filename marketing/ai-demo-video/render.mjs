@@ -26,10 +26,12 @@ if (mode === 'preview') {
 } else {
   const duration = await page.evaluate(() => window.DURATION);
   const total = Math.round(duration * FPS);
+  let from = 0, to = total;
+  if (mode === 'range') { from = Number(process.argv[3]); to = Number(process.argv[4]) + 1; }
   const framesDir = path.join(DIR, 'frames');
   fs.mkdirSync(framesDir, { recursive: true });
   const t0 = Date.now();
-  for (let f = 0; f < total; f++) {
+  for (let f = from; f < to; f++) {
     await page.evaluate(t => window.seek(t), f / FPS);
     await page.screenshot({ path: path.join(framesDir, `f${String(f).padStart(4, '0')}.png`) });
     if (f % 150 === 0) console.log(`frame ${f}/${total} (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
