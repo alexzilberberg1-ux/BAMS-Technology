@@ -1,0 +1,55 @@
+{
+  "clientId": "lakeside-dental",
+  "branding": {
+    "assistantName": "Lakeside Assistant",
+    "practiceName": "Lakeside Dental",
+    "primaryColor": "#0f9c8d",
+    "accentColor": "#12b3a2",
+    "avatar": "🦷",
+    "greeting": "Hi! 👋 I'm Lakeside's virtual assistant. I can answer questions and book appointments. How can I help?"
+  },
+  "practice": {
+    "hours": "Mon–Fri 8am–5pm, Sat 9am–1pm, closed Sunday",
+    "address": "412 Lakeshore Drive, Fairview",
+    "phone": "(555) 014-2200",
+    "providers": [
+      { "name": "Dr. Patel", "role": "General Dentistry", "practitionerId": "prac-1" },
+      { "name": "Dr. Okafor", "role": "Orthodontics", "practitionerId": "prac-2" }
+    ],
+    "acceptedInsurance": [
+      "Delta Dental PPO",
+      "Cigna Dental",
+      "MetLife",
+      "Guardian",
+      "Aetna Dental"
+    ],
+    "appointmentTypes": [
+      { "name": "Cleaning", "durationMinutes": 45, "emrCode": "cleaning" },
+      { "name": "Checkup", "durationMinutes": 30, "emrCode": "checkup" },
+      { "name": "Emergency", "durationMinutes": 60, "emrCode": "emergency" }
+    ]
+  },
+  "knowledge": [
+    {
+      "topic": "New patients",
+      "content": "New patients should arrive 15 minutes early or complete the intake form online beforehand. First visits include a full exam and X-rays."
+    },
+    {
+      "topic": "Payment",
+      "content": "We accept all major cards, cash, and CareCredit financing. Payment plans are available for treatment over $500."
+    },
+    {
+      "topic": "Cancellation policy",
+      "content": "Please give 24 hours notice to cancel or reschedule. Same-day cancellations may incur a $50 fee."
+    }
+  ],
+  "features": {
+    "scheduling": true,
+    "insuranceQuestions": true,
+    "documentIntake": true,
+    "humanHandoff": true
+  },
+  "emr": { "kind": "mock" },
+  "model": "claude-opus-5",
+  "allowedOrigins": ["https://lakesidedental.example.com"]
+}
