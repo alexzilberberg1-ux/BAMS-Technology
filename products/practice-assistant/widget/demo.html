@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BAMS Technology — Live AI Assistant Demo</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(160deg, #081536 0%, #0e2a63 45%, #1d4fd7 100%);
+    color:#fff; min-height:100vh;
+  }
+  .wrap { max-width:760px; margin:0 auto; padding:56px 24px 120px; }
+  .kicker { color:#9db9f2; font-size:14px; font-weight:700; letter-spacing:3px; margin-bottom:18px; }
+  h1 { font-size:40px; font-weight:900; line-height:1.15; letter-spacing:-0.5px; }
+  h1 em { font-style:normal; background:linear-gradient(90deg,#8db4ff,#e8f0ff);
+          -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .lead { margin-top:18px; font-size:18px; color:#c7d6f5; line-height:1.55; }
+  .card { margin-top:36px; background:rgba(255,255,255,.07); border:1px solid rgba(157,185,242,.25);
+          border-radius:16px; padding:26px 28px; }
+  .card h2 { font-size:16px; color:#9db9f2; letter-spacing:1px; margin-bottom:14px; }
+  .card ol { margin-left:20px; display:flex; flex-direction:column; gap:10px; font-size:16px;
+             color:#e8eefc; line-height:1.5; }
+  .card li b { color:#fff; }
+  .note { margin-top:26px; font-size:13px; color:#9db9f2; line-height:1.5; }
+  .hint { position:fixed; right:96px; bottom:34px; background:#fff; color:#0e2a63;
+          font-weight:700; font-size:14px; padding:10px 16px; border-radius:999px;
+          box-shadow:0 10px 30px rgba(0,0,0,.3); animation:bob 2s ease-in-out infinite; }
+  @keyframes bob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+  a { color:#8db4ff; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">BAMS TECHNOLOGY · LIVE DEMO</div>
+    <h1>Talk to the AI front desk. <em>It actually books.</em></h1>
+    <p class="lead">
+      This is a live assistant for a fictional practice, “Lakeside Dental,” connected to a
+      sandbox scheduling system. Everything you see — the branding, the insurance answers, the
+      bookable appointment types — comes from one configuration file. For your practice, it
+      plugs into your real EMR (athenahealth, Open Dental, or any FHIR-compatible system).
+    </p>
+    <div class="card">
+      <h2>THINGS TO TRY</h2>
+      <ol>
+        <li>Ask <b>“Do you take Delta Dental PPO?”</b> — it answers only from the practice's real plan list.</li>
+        <li>Say <b>“I need a cleaning this Saturday”</b> — it checks live availability and offers real slots.</li>
+        <li>Pick a time and give a name and phone number — it <b>books the appointment</b> in the scheduling system.</li>
+        <li>Ask for a human — it records a <b>callback request</b> for the front desk.</li>
+        <li>Try asking for medical advice — it politely <b>refuses and routes you to the providers</b>.</li>
+      </ol>
+    </div>
+    <p class="note">
+      Demo data only — nothing here touches a real practice or real patients. Assistant built by
+      <a href="https://bamstechnology.com">BAMS Technology</a> · custom software, AI integration
+      &amp; managed IT.
+    </p>
+  </div>
+  <div class="hint">Try the chat →</div>
+  <script>
+    // Hide the hint once the widget is opened
+    document.addEventListener("click", function (ev) {
+      var b = ev.target.closest && ev.target.closest("button[aria-label^='Chat with']");
+      if (b) { var h = document.querySelector(".hint"); if (h) h.remove(); }
+    });
+  </script>
+  <script src="/widget/widget.js" data-client="lakeside-dental" defer></script>
+</body>
+</html>

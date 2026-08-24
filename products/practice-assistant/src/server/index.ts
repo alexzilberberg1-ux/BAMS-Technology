@@ -177,8 +177,9 @@ export function createApp(options?: { clientsDir?: string }) {
     });
   });
 
-  // The embeddable widget script
+  // The embeddable widget script + self-hosted demo page
   app.use("/widget", express.static(path.resolve(here, "../../widget")));
+  app.get("/", (_req, res) => res.redirect("/widget/demo.html"));
 
   return { app, clients, sessions, handoff, adapters, audit };
 }
