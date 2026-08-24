@@ -1,0 +1,57 @@
+{
+  "clientId": "sunrise-family-medicine",
+  "branding": {
+    "assistantName": "Sunrise Assistant",
+    "practiceName": "Sunrise Family Medicine",
+    "primaryColor": "#1d4fd7",
+    "accentColor": "#3f77ff",
+    "avatar": "🌅",
+    "greeting": "Hi! I'm Sunrise's virtual assistant. I can answer questions about the practice and help you book a visit."
+  },
+  "practice": {
+    "hours": "Mon–Fri 8am–6pm, closed weekends",
+    "address": "88 Meridian Ave, Suite 200, Fairview",
+    "phone": "(555) 014-8800",
+    "providers": [
+      { "name": "Dr. Alvarez", "role": "Family Medicine" },
+      { "name": "Dr. Chen", "role": "Internal Medicine" }
+    ],
+    "acceptedInsurance": ["Aetna", "BCBS PPO", "Cigna", "UnitedHealthcare", "Medicare"],
+    "appointmentTypes": [
+      { "name": "New Patient Visit", "durationMinutes": 40, "emrCode": "82" },
+      { "name": "Follow-up", "durationMinutes": 20, "emrCode": "62" },
+      { "name": "Annual Physical", "durationMinutes": 40, "emrCode": "22" }
+    ]
+  },
+  "knowledge": [
+    {
+      "topic": "Telehealth",
+      "content": "Telehealth visits are available for follow-ups and medication reviews. Book a Follow-up and note that you'd like it virtual."
+    },
+    {
+      "topic": "Lab work",
+      "content": "Blood draws are done in-office Mon–Fri before 3pm. Fasting labs are best scheduled in the morning."
+    }
+  ],
+  "compliance": {
+    "privacyPolicyUrl": "https://sunrisefamilymed.example.com/privacy",
+    "consentText": "This assistant helps with scheduling and general practice questions. Please don't share detailed medical history here — only what's needed to book. The information you provide is used to assist you and manage your appointment.",
+    "emergencyNote": "If this is a medical emergency, call 911 or go to the nearest ER."
+  },
+  "features": {
+    "scheduling": true,
+    "insuranceQuestions": true,
+    "documentIntake": true,
+    "humanHandoff": true
+  },
+  "emr": {
+    "kind": "athenahealth",
+    "baseUrl": "https://api.preview.platform.athenahealth.com",
+    "practiceId": "195900",
+    "departmentId": "1",
+    "clientIdEnv": "SUNRISE_ATHENA_CLIENT_ID",
+    "clientSecretEnv": "SUNRISE_ATHENA_CLIENT_SECRET"
+  },
+  "model": "claude-opus-5",
+  "allowedOrigins": ["https://sunrisefamilymed.example.com"]
+}

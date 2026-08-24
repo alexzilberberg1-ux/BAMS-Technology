@@ -61,6 +61,17 @@ export const FeaturesSchema = z.object({
   humanHandoff: z.boolean().default(true),
 });
 
+/** Patient-facing compliance copy shown by the widget before any chat */
+export const ComplianceSchema = z.object({
+  privacyPolicyUrl: z.string().url().optional(),
+  consentText: z
+    .string()
+    .default(
+      "This assistant helps with scheduling and general practice questions. Please don't share detailed medical history here — only what's needed to book. The information you provide is used to assist you and manage your appointment.",
+    ),
+  emergencyNote: z.string().default("If this is a medical emergency, call 911."),
+});
+
 export const EmrConfigSchema = z.discriminatedUnion("kind", [
   z.object({
     /** In-memory EMR for demos and development */
@@ -74,6 +85,18 @@ export const EmrConfigSchema = z.discriminatedUnion("kind", [
     authTokenEnv: z.string(),
     /** FHIR Schedule/Practitioner references used when querying slots */
     scheduleReference: z.string().optional(),
+  }),
+  z.object({
+    /** athenahealth athenaOne API (api.platform.athenahealth.com) */
+    kind: z.literal("athenahealth"),
+    baseUrl: z.string().url().default("https://api.platform.athenahealth.com"),
+    /** athenahealth practice ID (use "195900" against the sandbox) */
+    practiceId: z.string().min(1),
+    /** Department the assistant books into */
+    departmentId: z.string().min(1),
+    /** Env vars holding the OAuth client credentials (never the secrets themselves) */
+    clientIdEnv: z.string(),
+    clientSecretEnv: z.string(),
   }),
   z.object({
     /** Open Dental REST API (https://api.opendental.com) */
@@ -94,6 +117,11 @@ export const ClientConfigSchema = z.object({
   branding: BrandingSchema,
   practice: PracticeInfoSchema,
   knowledge: z.array(KnowledgeEntrySchema).default([]),
+  compliance: ComplianceSchema.default({
+    consentText:
+      "This assistant helps with scheduling and general practice questions. Please don't share detailed medical history here — only what's needed to book. The information you provide is used to assist you and manage your appointment.",
+    emergencyNote: "If this is a medical emergency, call 911.",
+  }),
   features: FeaturesSchema.default({
     scheduling: true,
     insuranceQuestions: true,

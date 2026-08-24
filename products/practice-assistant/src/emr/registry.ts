@@ -3,6 +3,7 @@ import type { EmrAdapter } from "./types.js";
 import { MockEmrAdapter } from "./mock.js";
 import { FhirR4Adapter } from "./fhir.js";
 import { OpenDentalAdapter } from "./opendental.js";
+import { AthenaHealthAdapter } from "./athenahealth.js";
 
 function requireEnv(name: string): string {
   const value = process.env[name];
@@ -15,6 +16,16 @@ export function createAdapter(config: EmrConfig): EmrAdapter {
   switch (config.kind) {
     case "mock":
       return new MockEmrAdapter();
+    case "athenahealth":
+      return new AthenaHealthAdapter({
+        baseUrl: config.baseUrl,
+        practiceId: config.practiceId,
+        departmentId: config.departmentId,
+        // Lazy: the server can boot (and serve the widget) before credentials
+        // are provisioned; the first EMR call fails loudly instead.
+        getClientId: () => requireEnv(config.clientIdEnv),
+        getClientSecret: () => requireEnv(config.clientSecretEnv),
+      });
     case "fhir-r4":
       return new FhirR4Adapter({
         baseUrl: config.baseUrl,
