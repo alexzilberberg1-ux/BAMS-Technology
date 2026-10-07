@@ -132,6 +132,7 @@ export const pageFiles = {
   'partners': 'partners.html', 'case-studies': 'case-studies.html',
   'privacy-policy': 'privacy-policy.html', 'terms-of-service': 'terms-of-service.html',
   'contact-us': 'contact-us.html',
+  'visitconnect': '/visitconnect',
 };
 
 export function navItemsFor() {
@@ -141,6 +142,7 @@ export function navItemsFor() {
     { label: 'SERVICES', href: '/#services-section', hasDropdown: true, notDropdown: false, dropdownItems: serviceLinks },
     { label: 'PARTNERS', href: 'partners.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
     { label: 'CASE STUDIES', href: 'case-studies.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
+    { label: 'VISITCONNECT', href: '/visitconnect', hasDropdown: false, notDropdown: true, dropdownItems: [] },
     { label: 'CONTACT', href: 'contact-us.html', hasDropdown: false, notDropdown: true, dropdownItems: [] },
   ];
 }
@@ -150,6 +152,7 @@ export function footerCompanyItems() {
     { label: 'Services', href: '/#services-section' },
     { label: 'Partners', href: 'partners.html' },
     { label: 'Case Studies', href: 'case-studies.html' },
+    { label: 'VisitConnect', href: '/visitconnect' },
     { label: 'Contact', href: 'contact-us.html' },
     { label: 'Privacy Policy', href: 'privacy-policy.html' },
     { label: 'Terms of Service', href: 'terms-of-service.html' },
