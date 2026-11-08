@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-<title>VisitConnect by BAMS Technology | Front-Office Automation for Medical Practices</title>
-<meta name="description" content="VisitConnect by BAMS Technology coordinates scheduling, intake, documents and staff follow-up in one workflow that works with your practice's existing EMR.">
+<title>VisitConnect by BAMS Technology | Easy Booking, Time Back for the Front Desk</title>
+<meta name="description" content="Patients book real appointments online, any time of day. Intake, consent, messages and refill requests come in organized, so the front desk spends less time on phone tag and paperwork.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -45,6 +45,9 @@
     .grid-3,.grid-4{grid-template-columns:1fr !important}
     .split-grid{grid-template-columns:1fr !important}
     .grid-4-item{border-left:none !important;border-top:1px solid #C9D3E0;padding:24px 0 !important}
+  }
+  @media (max-width:420px){
+    .cta-primary{font-size:0.74rem !important;letter-spacing:0.03em !important;padding:16px 12px !important;white-space:nowrap !important}
   }
 </style>
 </helmet>
@@ -87,15 +90,15 @@
   <section class="px-page hero-center" style="padding:140px 48px 72px;max-width:960px;margin:0 auto;text-align:center">
     <div style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.8rem;letter-spacing:0.12em;color:#6B7280;margin-bottom:22px">
       <span style="width:7px;height:7px;background:{{ accentBlue }}"></span>
-      VISITCONNECT BY BAMS TECHNOLOGY // FRONT-OFFICE AUTOMATION
+      VISITCONNECT BY BAMS TECHNOLOGY // PATIENT BOOKING
     </div>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.6rem,5.5vw,4.4rem);line-height:1.15;letter-spacing:-0.03em;color:{{ navyDark }};margin:0 0 28px">
-      INCREASE THE EFFICIENCY OF<br>
-      <span style="color:{{ accentBlue }}">PATIENT BOOKINGS.</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(2.05rem,4.8vw,4rem);line-height:1.08;letter-spacing:-0.03em;color:{{ navyDark }};margin:0 0 28px">
+      EASY BOOKING<br>FOR PATIENTS.<br>
+      <span style="color:{{ accentBlue }}">TIME BACK FOR<br>YOUR FRONT DESK.</span>
     </h1>
-    <p style="font-size:1.1rem;line-height:1.7;color:#4B5563;margin:0 auto 40px;max-width:660px">VisitConnect handles appointment requests, patient intake, documents and staff follow-up in one coordinated workflow, so bookings take less manual work, alongside the EMR your practice already uses.</p>
+    <p style="font-size:1.1rem;line-height:1.7;color:#4B5563;margin:0 auto 40px;max-width:720px">Patients book real appointments in minutes, any time of day, without waiting on hold. Intake, consent, messages and refill requests come in organized and complete, so your front desk spends less time on phone tag and paperwork and more time on the patients in front of them.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a href="{{ demoHref }}" style="display:inline-block;background:{{ accentBlue }};color:#fff;font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.08em;font-weight:600;padding:18px 38px;border-radius:6px">SCHEDULE A DEMO →</a>
+      <a href="{{ demoHref }}" class="cta-primary" style="display:inline-block;background:{{ accentBlue }};color:#fff;font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.08em;font-weight:600;padding:18px 38px;border-radius:6px;white-space:nowrap">BOOK A 15-MINUTE WALKTHROUGH →</a>
       <a href="#overview" style="display:inline-block;border:1px solid #D1D5DB;color:{{ navyDark }};font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.08em;font-weight:600;padding:18px 32px;border-radius:6px">WATCH THE OVERVIEW ▶</a>
     </div>
     <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.06em;color:#9CA3AF;margin-top:16px">Developed and supported by BAMS Technology.</div>
@@ -120,7 +123,7 @@
   <section id="benefits" class="px-page" style="padding:96px 48px 40px;max-width:1440px;margin:0 auto">
     <div style="text-align:center;margin-bottom:56px">
       <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// WHY VISITCONNECT</div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-0.02em;color:{{ navyDark }};margin:0">Less administrative work. <span style="color:#9CA3AF">More attention for patients.</span></h2>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-0.02em;color:{{ navyDark }};margin:0">Time back for the front desk.<br><span style="color:#9CA3AF">More attention for patients.</span></h2>
     </div>
     <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#E5E7EB;border:1px solid #E5E7EB">
       <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="3">
@@ -136,8 +139,8 @@
   <section id="workflows" class="px-page" style="background:{{ panelBg }};padding:96px 48px;margin-top:64px">
     <div style="max-width:1280px;margin:0 auto">
       <div style="text-align:center;margin-bottom:56px">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// SUPPORTED WORKFLOWS</div>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-0.02em;color:{{ navyDark }};margin:0">One workflow for the whole front office.</h2>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// WHAT'S INCLUDED</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-0.02em;color:{{ navyDark }};margin:0">Bookings, messages and requests in one place.</h2>
       </div>
       <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#C9D3E0;border:1px solid #C9D3E0">
         <sc-for list="{{ workflows }}" as="w" hint-placeholder-count="6">
@@ -154,10 +157,10 @@
   <section id="emr" class="px-page" style="background:{{ navyDark }};padding:96px 48px">
     <div class="split-grid" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center">
       <div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlueLight }};margin-bottom:14px">// WORKS WITH YOUR EMR</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlueLight }};margin-bottom:14px">// YOUR EMR</div>
         <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.9rem;color:#fff;letter-spacing:-0.02em;margin:0 0 16px">Your EMR stays the system of record.</h2>
-        <p style="color:#A9B4C6;font-size:0.95rem;line-height:1.7;margin:0 0 16px;max-width:520px">VisitConnect works alongside the EMR and practice-management system you already use. It connects through approved, supported interfaces, and reads or writes data only where your EMR's supported access, permissions and implementation testing allow it.</p>
-        <p style="color:#A9B4C6;font-size:0.95rem;line-height:1.7;margin:0;max-width:520px">When an action isn't supported or a transaction fails, the request goes to a staff member with its status clearly shown. Integration scope is confirmed during discovery, before any live patient data is used.</p>
+        <p style="color:#A9B4C6;font-size:0.95rem;line-height:1.7;margin:0 0 16px;max-width:520px">VisitConnect connects with the EMR where the provider supports it. The chart stays in the system your office already uses.</p>
+        <p style="color:#A9B4C6;font-size:0.95rem;line-height:1.7;margin:0;max-width:520px">When a connection isn't available, staff get a single PDF they can attach. What the connection can do is confirmed for each office before patients start booking.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.1)">
         <sc-for list="{{ emrPoints }}" as="p" hint-placeholder-count="3">
@@ -177,8 +180,8 @@
         <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.9rem;color:{{ navyDark }};letter-spacing:-0.02em;margin:0">VisitConnect Voice.</h2>
       </div>
       <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-left:3px solid {{ accentBlue }};padding:28px 32px">
-        <p style="font-size:0.95rem;line-height:1.7;color:#4B5563;margin:0 0 12px">Add AI phone answering for approved routine requests, such as appointment requests, changes and intake, with transfer or escalation to your staff whenever a caller needs a person.</p>
-        <p style="font-size:0.85rem;line-height:1.6;color:#6B7280;margin:0">Voice is scoped separately, based on your call volume, phone system and supported EMR capabilities.</p>
+        <p style="font-size:0.95rem;line-height:1.7;color:#4B5563;margin:0 0 12px">Optional coverage for calls that still come in, with a transfer to your staff whenever a caller needs a person. Online booking stays the path for a real appointment.</p>
+        <p style="font-size:0.85rem;line-height:1.6;color:#6B7280;margin:0">Voice is scoped separately from online booking, based on your call volume and phone system.</p>
       </div>
     </div>
   </section>
@@ -203,10 +206,10 @@
 
   <section id="demo" class="px-page" style="padding:96px 48px;text-align:center">
     <div style="max-width:760px;margin:0 auto">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// SEE IT IN ACTION</div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-0.02em;color:{{ navyDark }};margin:0 0 18px">See VisitConnect on your practice's workflow.</h2>
-      <p style="font-size:1rem;line-height:1.7;color:#4B5563;margin:0 auto 36px;max-width:560px">We'll walk through your scheduling rules, intake needs and EMR setup, and show where VisitConnect can take work off your team.</p>
-      <a href="{{ demoHref }}" style="display:inline-block;background:{{ accentBlue }};color:#fff;font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.08em;font-weight:600;padding:18px 38px;border-radius:6px">SCHEDULE A DEMO →</a>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:{{ accentBlue }};margin-bottom:14px">// BOOK A WALKTHROUGH</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-0.02em;color:{{ navyDark }};margin:0 0 18px">See how this fits your front desk.</h2>
+      <p style="font-size:1rem;line-height:1.7;color:#4B5563;margin:0 auto 36px;max-width:560px">A 15-minute walkthrough of how patients would book, finish intake and send messages or refill requests, and where phone tag and paperwork are taking time from the day.</p>
+      <a href="{{ demoHref }}" class="cta-primary" style="display:inline-block;background:{{ accentBlue }};color:#fff;font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.08em;font-weight:600;padding:18px 38px;border-radius:6px;white-space:nowrap">BOOK A 15-MINUTE WALKTHROUGH →</a>
       <div style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;letter-spacing:0.04em;color:#6B7280;margin-top:18px">Or call <a href="tel:+17544447773" style="font-weight:600">(754) 444-7773</a></div>
     </div>
   </section>
@@ -238,31 +241,31 @@ class Component extends DCLogic {
       accentBlue, navyDark,
       accentBlueLight: 'oklch(from ' + accentBlue + ' calc(l + 0.15) c h)',
       panelBg: this.props.panelBg ?? '#EAF1F8',
-      demoHref: 'mailto:info@bamstechnology.com?subject=' + encodeURIComponent('VisitConnect Demo Request'),
-      tickerItems: ['SCHEDULING', 'PATIENT INTAKE', 'DOCUMENTS', 'INSURANCE COORDINATION', 'STAFF ESCALATION'],
+      demoHref: 'mailto:info@bamstechnology.com?subject=' + encodeURIComponent('VisitConnect 15-minute walkthrough'),
+      tickerItems: ['ONLINE BOOKING', 'INTAKE & CONSENT', 'MESSAGES', 'REFILL REQUESTS', 'ONE STAFF QUEUE'],
       benefits: [
-        { number: '01', title: 'Give staff time back', description: 'Cut repeated data collection, manual routing and routine follow-up, so your team can spend more of the day with patients and higher-value work.' },
-        { number: '02', title: 'Keep your whole team in sync', description: 'A shared workflow with clear task ownership keeps providers, front desk and back office working from the same queue, helping prevent duplicate appointments, repeated work and dropped handoffs.' },
-        { number: '03', title: 'Work with your existing EMR', description: 'Your EMR stays the system of record. VisitConnect works alongside it through supported interfaces, without replacing the tools your staff already know.' },
+        { number: '01', title: 'Booking that takes minutes', description: 'Patients pick a real open time and get confirmed without a single phone call.' },
+        { number: '02', title: 'Fewer calls, less chasing', description: 'Messages and refill requests arrive in one queue, routed to the front desk or the doctor.' },
+        { number: '03', title: 'Less busywork, more patient care', description: 'Intake and consent are done before the visit, so routine tasks stop eating into the day.' },
       ],
       workflows: [
-        { tag: 'SCHEDULING', title: 'Scheduling across providers', description: 'Handle appointment requests, changes and cancellations using your provider, appointment-type and location rules. Where access allows, check existing appointments and availability first.' },
-        { tag: 'INTAKE', title: 'Patient intake and data collection', description: 'Collect the information each workflow needs through configurable intake steps, flag what is missing and prepare supported EMR updates for staff review.' },
-        { tag: 'DOCUMENTS', title: 'Document workflows', description: 'Upload, retrieve and process documents within the validated integration scope, with review steps for anything incomplete or uncertain.' },
-        { tag: 'INSURANCE', title: 'Insurance coordination', description: 'Gather and route the information your insurance workflows need. Eligibility verification stays in your EMR and existing processes.' },
-        { tag: 'ESCALATION', title: 'Human escalation', description: 'Requests that need judgment, approval or an unsupported action go to the right staff member with a clear handoff.' },
-        { tag: 'CONTROLS', title: 'Admin controls and analytics', description: 'Set workflow rules, permissions and task ownership, and review request volume, completion, exceptions and outstanding work across the practice.' },
+        { tag: 'BOOKING', title: 'Online booking', description: 'Patients book a real open appointment online, any time of day, and get confirmed without calling the office.' },
+        { tag: 'INTAKE', title: 'Intake and consent', description: 'Intake questions and consent are finished in one guided flow, before the patient arrives.' },
+        { tag: 'MESSAGES', title: 'Message the front desk or doctor', description: 'Patients message the front desk or their doctor from the same place they book.' },
+        { tag: 'REFILLS', title: 'Prescription refill requests', description: 'Refill requests come in through the same flow and go to the front desk or the doctor.' },
+        { tag: 'QUEUE', title: 'One place for staff', description: 'Bookings, messages and refill requests show up together, so the front desk works from one queue.' },
+        { tag: 'EMR', title: 'EMR connection, where supported', description: 'Connects with the EMR where the provider supports it. Otherwise, staff attach a single PDF.' },
       ],
       emrPoints: [
-        { value: 'EMR', label: 'REMAINS THE SYSTEM OF RECORD' },
-        { value: 'SUPPORTED', label: 'INTERFACES AND ACCESS ONLY' },
-        { value: 'STAFF', label: 'HANDLE EVERY EXCEPTION' },
+        { value: 'CONNECT', label: 'WHERE THE EMR PROVIDER SUPPORTS IT' },
+        { value: 'PDF', label: 'A SINGLE FILE STAFF CAN ATTACH' },
+        { value: 'EMR', label: 'STAYS THE SYSTEM OF RECORD' },
       ],
       rolloutSteps: [
-        { n: '01', title: 'Discovery and access', desc: 'Confirm your scheduling rules, intake needs, owners, data handling and EMR access.' },
-        { n: '02', title: 'Configure and integrate', desc: 'Set up your workflows and validate the read/write, scheduling and document actions your EMR supports.' },
-        { n: '03', title: 'Test and train', desc: 'Test normal and exception paths, train staff and confirm who owns each escalation.' },
-        { n: '04', title: 'Pilot and launch', desc: 'Run a controlled pilot, resolve issues and roll out more broadly once your practice approves.' },
+        { n: '01', title: 'Discovery', desc: 'Confirm how patients book today, the intake and consent you need, and who should see messages and refill requests.' },
+        { n: '02', title: 'Configure', desc: 'Set up booking, intake, messaging and refills, and confirm whether your EMR provider supports a connection or staff will attach a PDF.' },
+        { n: '03', title: 'Test and train', desc: 'Walk the front desk through the queue for bookings, messages and refill requests before patients use it.' },
+        { n: '04', title: 'Pilot and launch', desc: 'Open online booking once the front desk is comfortable, and keep a person available when a patient needs one.' },
       ],
     };
     if (!d) return { ...base, navItems: [], footerItems: [] };
